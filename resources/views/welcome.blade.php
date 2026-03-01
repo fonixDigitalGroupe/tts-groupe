@@ -7,9 +7,9 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pourquoi choisir TTS GROUPE ?</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Qui Sommes-Nous ?</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Nous combinons expertise technique et approche centrée sur le client pour livrer des résultats exceptionnels.
+                    L'expertise technique au service de vos projets
                 </p>
             </div>
 
