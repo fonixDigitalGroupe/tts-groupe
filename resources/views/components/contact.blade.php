@@ -11,8 +11,8 @@
             <!-- Form Side -->
             <div class="lg:w-1/2 p-8 md:p-12 lg:p-16">
                 <div class="mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Envoyez-nous un message</h2>
-                    <p class="text-gray-600">Proposez-nous votre projet ou posez vos questions, notre équipe vous répondra avec plaisir.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Prêt à donner vie à votre prochain projet ?</h2>
+                    <p class="text-gray-600">Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.</p>
                 </div>
 
                 <form action="#" method="POST" class="space-y-6">
