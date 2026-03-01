@@ -48,4 +48,6 @@
             </div>
         </div>
     </section>
+
+    <x-services />
 @endsection
