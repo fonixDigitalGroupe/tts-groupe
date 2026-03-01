@@ -52,4 +52,5 @@
     <x-services />
     <x-teams />
     <x-shop-cta />
+    <x-contact />
 @endsection
