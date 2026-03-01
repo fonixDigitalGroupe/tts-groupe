@@ -1,5 +1,14 @@
 <section class="py-20 bg-gray-50/30" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Centered Header Outside the Card -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Prêt à donner vie à votre prochain projet ?</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.
+            </p>
+        </div>
+
         <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col lg:flex-row">
             
             <!-- Image Side -->
@@ -11,8 +20,8 @@
             <!-- Form Side -->
             <div class="lg:w-1/2 p-8 md:p-12 lg:p-16">
                 <div class="mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Prêt à donner vie à votre prochain projet ?</h2>
-                    <p class="text-gray-600">Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Envoyez-nous un message</h3>
+                    <p class="text-gray-600">Complétez le formulaire ci-dessous et notre équipe vous recontactera rapidement.</p>
                 </div>
 
                 <form action="#" method="POST" class="space-y-6">
