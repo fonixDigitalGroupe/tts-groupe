@@ -18,7 +18,7 @@
             <!-- TADEX -->
             <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
                 <div class="flex flex-col items-center space-y-3">
-                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-3xl group-hover:scale-110 transition-transform shadow-lg shadow-orange-600/20">T</div>
+                    <img src="{{ asset('images/tadexe.png') }}" alt="TADEX" class="h-10 w-auto group-hover:scale-110 transition-transform">
                     <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">TADEX</span>
                 </div>
             </div>
