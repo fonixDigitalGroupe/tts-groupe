@@ -8,7 +8,7 @@
         <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-70">
             <!-- PREMIUM SÉNÉGAL -->
             <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all duration-300 group">
-                <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform shadow-sm">P</div>
+                <img src="{{ asset('images/premium.png') }}" alt="PREMIUM SÉNÉGAL" class="h-10 w-auto group-hover:scale-110 transition-transform">
                 <span class="text-lg font-bold text-gray-800">PREMIUM SÉNÉGAL</span>
             </div>
 
