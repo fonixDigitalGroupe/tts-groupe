@@ -50,4 +50,5 @@
     </section>
 
     <x-services />
+    <x-teams />
 @endsection
