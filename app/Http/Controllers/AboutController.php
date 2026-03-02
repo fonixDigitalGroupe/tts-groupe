@@ -20,4 +20,9 @@ class AboutController extends Controller
     {
         return view('pages.production-terrain');
     }
+
+    public function raccordement()
+    {
+        return view('pages.raccordement');
+    }
 }
