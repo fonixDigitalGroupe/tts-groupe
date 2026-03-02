@@ -3,8 +3,8 @@
         <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-                <a href="/" class="text-2xl font-black tracking-tighter text-blue-900 group">
-                    TTS <span class="text-orange-500 transition-colors group-hover:text-blue-700">GROUPE</span>
+                <a href="/" class="group">
+                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105">
                 </a>
             </div>
 

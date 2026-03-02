@@ -7,11 +7,6 @@
 
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-        <!-- Logo in Banner -->
-        <div class="mb-8 animate-fade-in-up">
-            <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-20 md:h-24 w-auto object-contain">
-        </div>
-
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up uppercase">
             Le goût du travail de <span class="text-blue-500">qualité</span>
         </h1>
