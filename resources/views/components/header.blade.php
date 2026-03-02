@@ -1,10 +1,10 @@
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+        <div class="flex justify-between items-center h-24">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="/" class="group">
-                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105">
                 </a>
             </div>
 
