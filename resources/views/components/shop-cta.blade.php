@@ -1,6 +1,6 @@
 <section class="py-6 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden bg-[#9333ea] rounded-[2rem] p-8 md:p-10 text-center text-white shadow-2xl">
+        <div class="relative overflow-hidden bg-[#9333ea] rounded-[2rem] p-8 md:p-10 text-center text-white shadow-lg">
             <!-- Background Decorations -->
             <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
