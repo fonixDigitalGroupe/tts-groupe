@@ -11,7 +11,7 @@
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-8">
                 <a href="/" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Accueil</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">À propos</a>
+                <a href="{{ route('about') }}" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">À propos</a>
                 <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nos services</a>
                 <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nous contacter</a>
             </nav>
