@@ -25,4 +25,14 @@ class AboutController extends Controller
     {
         return view('pages.raccordement');
     }
+
+    public function sav()
+    {
+        return view('pages.sav');
+    }
+
+    public function deploiement()
+    {
+        return view('pages.deploiement');
+    }
 }

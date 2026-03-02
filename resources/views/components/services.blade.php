@@ -1,7 +1,7 @@
 <section class="py-20 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display uppercase tracking-tight">Nos Services</h2>
             <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="mt-auto">
-                    <a href="{{ route('production-terrain') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
+                    <a href="{{ route('raccordement') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
                         En savoir plus
                         <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="mt-auto">
-                    <a href="{{ route('production-terrain') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
+                    <a href="{{ route('sav') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
                         En savoir plus
                         <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="mt-auto">
-                    <a href="{{ route('production-terrain') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
+                    <a href="{{ route('deploiement') }}" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition-colors group/link">
                         En savoir plus
                         <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
