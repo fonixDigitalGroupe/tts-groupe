@@ -6,60 +6,60 @@
             <p class="text-lg text-gray-600">Ils nous font confiance pour leurs projets télécom</p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-center">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
             <!-- PREMIUM SÉNÉGAL -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/premium.png') }}" alt="PREMIUM SÉNÉGAL" class="h-16 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase text-center">Premium Sénégal</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase text-center leading-none">Premium Sénégal</span>
                 </div>
             </div>
 
             <!-- TADEX -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/tadexe.png') }}" alt="TADEX" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">TADEX</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">TADEX</span>
                 </div>
             </div>
 
             <!-- TER -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/ter.png') }}" alt="TER" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">TER</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">TER</span>
                 </div>
             </div>
 
             <!-- AFRITEL -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/afritel.png') }}" alt="AFRITEL" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">AFRITEL</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">AFRITEL</span>
                 </div>
             </div>
 
             <!-- CAMUSAT -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/camusat.png') }}" alt="CAMUSAT" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">CAMUSAT</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">CAMUSAT</span>
                 </div>
             </div>
 
             <!-- 3STB -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/camusat.png') }}" alt="3STB" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">3STB</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">3STB</span>
                 </div>
             </div>
 
             <!-- ENGELVIN -->
-            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group grayscale hover:grayscale-0">
-                <div class="flex flex-col items-center space-y-3">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition-all duration-300 group">
+                <div class="flex flex-col items-center space-y-2">
                     <img src="{{ asset('images/camusat.png') }}" alt="ENGELVIN" class="h-10 w-auto group-hover:scale-110 transition-transform">
-                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">ENGELVIN</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">ENGELVIN</span>
                 </div>
             </div>
         </div>
