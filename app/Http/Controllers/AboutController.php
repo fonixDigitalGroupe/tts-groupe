@@ -15,4 +15,9 @@ class AboutController extends Controller
     {
         return view('pages.bureau-etudes');
     }
+
+    public function productionTerrain()
+    {
+        return view('pages.production-terrain');
+    }
 }
