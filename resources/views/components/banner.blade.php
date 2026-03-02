@@ -1,7 +1,7 @@
 <section class="relative h-[500px] flex items-center overflow-hidden bg-gray-900">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('banner-bg.png') }}" alt="Banner Background" class="w-full h-full object-cover opacity-60">
+        <img src="{{ asset('images/tts.jpeg') }}" alt="Banner Background" class="w-full h-full object-cover opacity-60">
         <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent"></div>
     </div>
 
