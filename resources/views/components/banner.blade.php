@@ -7,11 +7,16 @@
 
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
-            Bienvenue chez <span class="text-blue-500">TTS GROUPE</span>
+        <!-- Logo in Banner -->
+        <div class="mb-8 animate-fade-in-up">
+            <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-20 md:h-24 w-auto object-contain">
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up uppercase">
+            Le goût du travail de <span class="text-blue-500">qualité</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
-            Votre partenaire de confiance pour des solutions technologiques de pointe et un accompagnement sur mesure.
+            L'expert de référence pour l'ingénierie, le déploiement et la maintenance de vos infrastructures Télécom & Fibre Optique.
         </p>
         <div class="flex space-x-4 animate-fade-in-up" style="animation-delay: 0.4s;">
             <a href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all transform hover:scale-105">

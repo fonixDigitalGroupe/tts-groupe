@@ -3,17 +3,17 @@
         <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    TTS GROUPE
+                <a href="/" class="text-2xl font-black tracking-tighter text-blue-900 group">
+                    TTS <span class="text-orange-500 transition-colors group-hover:text-blue-700">GROUPE</span>
                 </a>
             </div>
 
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="/" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Accueil</a>
-                <a href="{{ route('about') }}" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">À propos</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nos services</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nous contacter</a>
+                <a href="/" class="text-gray-600 hover:text-orange-600 font-bold transition-colors">Accueil</a>
+                <a href="{{ route('about') }}" class="text-gray-600 hover:text-orange-600 font-bold transition-colors">À propos</a>
+                <a href="#services" class="text-gray-600 hover:text-orange-600 font-bold transition-colors">Nos services</a>
+                <a href="#contact" class="text-gray-600 hover:text-orange-600 font-bold transition-colors">Nous contacter</a>
             </nav>
 
             <!-- Mobile menu button (placeholder) -->
