@@ -16,7 +16,7 @@
                 <!-- Title & Description -->
                 <h2 class="text-2xl md:text-3xl font-bold mb-2">Notre Boutique en Ligne</h2>
                 <p class="text-purple-100 text-base md:text-lg max-w-2xl mx-auto mb-6">
-                    Produits importés de France, disponibles immédiatement au Sénégal. Livraison 24/48h à Dakar et environs.
+                    Équipez-vous des meilleures solutions télécom importées de France. Matériels de haute performance pour entreprises et particuliers, disponibles immédiatement au Sénégal.
                 </p>
 
                 <!-- Status Pills -->
