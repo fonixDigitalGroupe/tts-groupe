@@ -14,7 +14,7 @@
             L'expert de référence pour l'ingénierie, le déploiement et la maintenance de vos infrastructures Télécom & Fibre Optique.
         </p>
         <div class="flex space-x-4 animate-fade-in-up" style="animation-delay: 0.4s;">
-            <a href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all transform hover:scale-105">
+            <a href="#services" class="px-8 py-4 bg-blue-950 hover:bg-blue-900 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-950/20">
                 Découvrir nos services
             </a>
             <a href="#" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg backdrop-blur-sm transition-all">
