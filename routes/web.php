@@ -9,3 +9,4 @@ Route::get('/', function () {
 });
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/bureau-etudes', [AboutController::class, 'bureauEtudes'])->name('bureau-etudes');

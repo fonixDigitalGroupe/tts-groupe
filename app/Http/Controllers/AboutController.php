@@ -10,4 +10,9 @@ class AboutController extends Controller
     {
         return view('pages.about');
     }
+
+    public function bureauEtudes()
+    {
+        return view('pages.bureau-etudes');
+    }
 }
