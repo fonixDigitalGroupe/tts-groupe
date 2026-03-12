@@ -18,12 +18,12 @@
         </div>
     </section>
 
-    <!-- Qui Sommes-Nous ? -->
-    <section class="py-20 bg-white">
+    <!-- Qui sommes-nous ? -->
+    <section class="py-20 bg-gray-50/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-2">Qui Sommes-Nous ?</h2>
-                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-8"></div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Qui sommes-nous ?</h2>
+                <div class="w-16 h-1 bg-blue-950 mx-auto rounded-full mb-8"></div>
                 <h3 class="text-xl font-bold text-blue-800 mb-6">Votre Partenaire Télécom de Confiance</h3>
                 <p class="text-gray-700 max-w-5xl mx-auto leading-relaxed text-center font-medium">
                     <span class="font-bold text-blue-900">TTS GROUPE</span> est une entreprise spécialisée dans les <span class="text-blue-700 font-bold">travaux Télécom et Fibre Optique</span>, intervenant sur les marchés <span class="text-blue-700 font-bold">européens et africains</span>. Notre double expertise &ndash; Bureau d'Études et Production Terrain &ndash; nous permet d'accompagner nos clients sur l'ensemble de la chaîne de valeur des réseaux télécom.

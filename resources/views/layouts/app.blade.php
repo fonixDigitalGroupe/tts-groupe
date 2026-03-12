@@ -8,7 +8,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Styles / Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +20,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -29,7 +32,7 @@
     
     <style>
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
@@ -41,5 +44,6 @@
     </main>
 
     <x-footer />
+    <x-whatsapp-button />
 </body>
 </html>

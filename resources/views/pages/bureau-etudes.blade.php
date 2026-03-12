@@ -1,203 +1,194 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="bg-[#2563eb] text-white py-20 text-center relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="flex flex-col items-center">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="grid grid-cols-4 gap-1">
-                        @for ($i = 0; $i < 16; $i++)
-                            <div class="w-1.5 h-1.5 bg-cyan-300 opacity-{{ rand(40, 90) }}"></div>
-                        @endfor
-                    </div>
-                    <h1 class="text-3xl font-bold tracking-tight uppercase">Bureau d'Études</h1>
+    <!-- Navigation Band -->
+    <div class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <a href="{{ url('/') }}" class="inline-flex items-center">
+                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 </div>
-                <p class="text-xl font-medium opacity-90 italic">"Innovation, expertise technique et solutions sur mesure"</p>
+                <div class="text-left">
+                    <h2 class="text-2xl font-bold text-blue-950 tracking-tight">Bureau d'études</h2>
+                    <p class="text-sm text-gray-500 font-medium">Ingénierie et conception de vos projets d'infrastructure</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Content Section -->
+    <section class="bg-blue-50 py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-2xl md:text-4xl font-semibold tracking-tight mb-6 text-blue-950">Bureau d'études</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium opacity-90">
+                    "Innovation, expertise technique et solutions sur mesure pour vos infrastructures."
+                </p>
             </div>
         </div>
         <!-- Background Decor -->
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/20 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
     </section>
 
     <!-- Content Section -->
-    <section class="py-20 bg-white">
+    <section class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-2 font-display uppercase tracking-tight">Nos Domaines d'Expertise</h2>
-                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-8"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                    Le Bureau d'Études de <span class="text-blue-900 font-bold">TTS GROUPE</span> est le cœur de notre innovation, alliant maîtrise technique et vision stratégique pour vos projets d'infrastructure.
+            <div class="text-center mb-20">
+                <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Nos domaines d'expertise</h2>
+                <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
+                    Le Bureau d'Études de <span class="text-blue-950 font-bold border-b-2 border-orange-500/30">TTS GROUPE</span> est le moteur de notre développement, alliant excellence technique et vision globale.
                 </p>
             </div>
 
-            <!-- Expertise Cards -->
-            <div class="grid md:grid-cols-2 gap-10">
+            <!-- Expertise Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
                 
                 <!-- 1. Études Réseaux Télécom -->
-                <div class="bg-gray-50/50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300 group">
-                    <div class="flex items-center space-x-5 mb-8">
-                        <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-purple-600/20 group-hover:scale-105 transition-transform">
-                            <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="flex items-center space-x-6 mb-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900">Études Réseaux Télécom</h3>
-                            <p class="text-purple-600 text-xs font-bold tracking-widest uppercase mt-0.5">FTTA • FTTH • FTTO</p>
+                            <h3 class="text-xl font-semibold text-blue-950 mb-1">Études réseaux télécom</h3>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">FTTA • FTTH • FTTO</span>
                         </div>
                     </div>
-                    <div class="mb-8 w-full">
-                        <div class="bg-orange-50/50 border-l-4 border-orange-500 p-4 rounded-r-xl">
-                            <p class="text-sm font-bold text-gray-800 italic">Expertise reconnue sur les marchés européens et africains</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-4 w-full text-gray-700">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span>Études de faisabilité et dimensionnement réseau</span>
+                    
+                    <ul class="space-y-4 text-gray-600 font-medium">
+                        <li class="flex items-start space-x-3 group/item">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0 group-hover/item:bg-blue-950 group-hover/item:text-white transition-colors"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Études de faisabilité et dimensionnement</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span>Conception d'architectures FTTA, FTTH, FTTO</span>
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Conception d'architectures réseaux</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span>Optimisation des coûts de déploiement</span>
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Optimisation technico-économique</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span>Ingénierie de raccordement multi-opérateurs</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span>Veille technologique et conformité aux normes internationales</span>
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Ingénierie de raccordement expert</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- 2. SIG & Cartographie -->
-                <div class="bg-gray-50/50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300 group">
-                    <div class="flex items-center space-x-5 mb-8">
-                        <div class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-                            <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="flex items-center space-x-6 mb-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900">SIG & Cartographie</h3>
-                            <p class="text-emerald-600 text-xs font-bold tracking-widest uppercase mt-0.5">Systèmes d'Information Géographique</p>
+                            <h3 class="text-xl font-semibold text-blue-950 mb-1">SIG & cartographie</h3>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Analyse Géospatiale</span>
                         </div>
                     </div>
-                    <div class="mb-8 w-full">
-                        <div class="bg-orange-50/50 border-l-4 border-orange-500 p-4 rounded-r-xl">
-                            <p class="text-sm font-bold text-gray-800 italic">Maîtrise complète des bases de données géospatiales</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 w-full text-gray-700">
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
-                            <span>Analyse spatiale avancée et modélisation territoriale</span>
+                    
+                    <ul class="space-y-4 text-gray-600 font-medium">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Modélisation territoriale avancée</span>
                         </li>
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
-                            <span>Cartographie de précision tous secteurs</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Cartographie de précision multi-secteurs</span>
                         </li>
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
-                            <span>Projets d'urbanisme et aménagement du territoire</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Gestion des ressources & Urbanisme</span>
                         </li>
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
-                            <span>Études agricoles et gestion des ressources</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
-                            <span>Cartographie énergies renouvelables (solaire, éolien)</span>
-                        </li>
-                        <li class="flex items-start space-x-2">
-                            <span class="text-emerald-500 mt-1">•</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
                             <span>Intégration de données multi-sources</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 3. Développement Logiciel Sur Mesure -->
-                <div class="bg-gray-50/50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300 group">
-                    <div class="flex items-center space-x-5 mb-8">
-                        <div class="w-16 h-16 bg-blue-800 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-800/20 group-hover:scale-105 transition-transform">
-                            <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                <!-- 3. Développement Logiciel -->
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="flex items-center space-x-6 mb-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900">Développement Logiciel</h3>
-                            <p class="text-blue-700 text-xs font-bold tracking-widest uppercase mt-0.5">Solutions Digitales Innovantes</p>
+                            <h3 class="text-xl font-semibold text-blue-950 mb-1">Développement logiciel</h3>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Solutions Digitales</span>
                         </div>
                     </div>
-                    <div class="mb-8 w-full">
-                        <div class="bg-orange-50/50 border-l-4 border-orange-500 p-4 rounded-r-xl">
-                            <p class="text-sm font-bold text-gray-800 italic">Création d'outils fonctionnels adaptés à vos besoins</p>
-                        </div>
-                    </div>
-                    <ul class="grid grid-cols-1 gap-3 w-full text-gray-700">
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Applications de gestion de chantiers et suivi terrain</span></li>
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Plateformes de supervision réseau en temps réel</span></li>
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Outils de planification et d'ordonnancement</span></li>
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Logiciels de gestion de parc véhicules et équipements</span></li>
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Tableaux de bord et reporting automatisé</span></li>
-                        <li class="flex items-start space-x-2"><span class="text-blue-800 mt-1">•</span><span>Interfaces métiers personnalisées</span></li>
-                    </ul>
-                </div>
-
-                <!-- 4. Détection & Numérisation de Réseaux -->
-                <div class="bg-gray-50/50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-all duration-300 group">
-                    <div class="flex items-center space-x-5 mb-8">
-                        <div class="w-16 h-16 bg-orange-700 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-700/20 group-hover:scale-105 transition-transform">
-                            <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v0m6 0v0m0 0V4m0 4h2m-6 4h2m-2 4h2m-2 4h2m-2-16h2" /></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-blue-900">Détection & Numérisation</h3>
-                            <p class="text-orange-700 text-xs font-bold tracking-widest uppercase mt-0.5">Relevés Terrain Haute Précision</p>
-                        </div>
-                    </div>
-                    <div class="mb-8 w-full">
-                        <div class="bg-orange-50/50 border-l-4 border-orange-500 p-4 rounded-r-xl">
-                            <p class="text-sm font-bold text-gray-800 italic">Technologie de pointe pour une cartographie fidèle</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 w-full text-gray-700">
-                        <li class="flex items-start space-x-4">
-                            <span class="bg-orange-700 w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"></span>
-                            <span>Détection de réseaux enterrés (fibre, cuivre, électrique)</span>
+                    
+                    <ul class="space-y-4 text-gray-600 font-medium">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Applications métier sur mesure</span>
                         </li>
-                        <li class="flex items-start space-x-4">
-                            <span class="bg-orange-700 w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"></span>
-                            <span>Géoréférencement GPS haute précision</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Plateformes de supervision temps réel</span>
                         </li>
-                        <li class="flex items-start space-x-4">
-                            <span class="bg-orange-700 w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"></span>
-                            <span>Numérisation et mise à jour des plans existants</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Optimisation des processus opérationnels</span>
                         </li>
-                        <li class="flex items-start space-x-4">
-                            <span class="bg-orange-700 w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"></span>
-                            <span>Création de bases de données patrimoniales</span>
-                        </li>
-                        <li class="flex items-start space-x-4">
-                            <span class="bg-orange-700 w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"></span>
-                            <span>Intégration aux systèmes SIG clients</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Tableaux de bord & Reporting IA</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- 4. Détection & Numérisation -->
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="flex items-center space-x-6 mb-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-950 mb-1">Détection & numérisation</h3>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Précision Terrestre</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 text-gray-600 font-medium">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Détection de réseaux enterrés</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Géoréférencement GPS centimétrique</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Mise à jour patrimoniale (DOE)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-5 h-5 flex items-center justify-center rounded-full bg-blue-50 text-blue-950 shrink-0"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></span>
+                            <span>Numérisation 3D d'infrastructures</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Project CTA -->
-    <section class="py-20 bg-gray-50/50 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h3 class="text-3xl font-bold text-blue-900 mb-6 font-display">Prêt à transformer vos infrastructures ?</h3>
-            <p class="text-gray-600 mb-10 max-w-2xl mx-auto">Confiez vos études techniques à un partenaire d'excellence présent sur deux continents.</p>
-            <a href="#" class="inline-flex items-center px-10 py-5 bg-orange-600 text-white rounded-full font-bold hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/30 transform hover:-translate-y-1">
-                Soumettre un projet
-                <svg class="w-6 h-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+    <section class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <h3 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-6 tracking-tight">Prêt à transformer vos infrastructures ?</h3>
+            <p class="text-gray-600 mb-10 max-w-2xl mx-auto font-medium text-lg leading-relaxed">
+                Confiez vos études techniques à un partenaire d'excellence présent sur deux continents pour des solutions durables et innovantes.
+            </p>
+            <div class="flex justify-center">
+                <a href="{{ url('/') }}#contact" class="inline-flex items-center px-10 py-5 bg-orange-500 text-white rounded-full font-black text-lg">
+                    Nous contacter
+                    <svg class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+            </div>
         </div>
     </section>
 @endsection
