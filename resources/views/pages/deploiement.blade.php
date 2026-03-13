@@ -5,7 +5,7 @@
     <div class="bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-8">
             <a href="{{ url('/') }}" class="inline-flex items-center">
-                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4">
+                <div class="w-12 h-12 bg-[#00A3A2] rounded-full flex items-center justify-center text-white mr-4">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 </div>
                 <div class="text-left">
@@ -28,17 +28,16 @@
         </div>
         <!-- Background Decor -->
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/20 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00A3A2]/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
     </section>
 
     <!-- Content Section -->
     <section class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Expansion & Densification</h2>
-                <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
+                <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Expansion & <span class="text-[#00A3A2]">Densification</span></h2>
                 <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
-                    <span class="text-blue-950 font-bold border-b-2 border-orange-500/30">TTS GROUPE</span> déploie des infrastructures réseaux de haute performance pour soutenir la transformation digitale des territoires.
+                    <span class="text-blue-950 font-bold border-b-2 border-[#00A3A2]/30">TTS GROUPE</span> déploie des infrastructures réseaux de haute performance pour soutenir la transformation digitale des territoires.
                 </p>
             </div>
 
@@ -48,12 +47,12 @@
                 <!-- 1. Infrastructure FTTH -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">Infrastructure FTTH</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Déploiement Global</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#008a89] text-[10px] font-black uppercase tracking-widest rounded-full">Déploiement Global</span>
                         </div>
                     </div>
                     
@@ -76,12 +75,12 @@
                 <!-- 2. Extensions Réseau -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">Extensions réseau</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Nouvelles Artères</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#008a89] text-[10px] font-black uppercase tracking-widest rounded-full">Nouvelles Artères</span>
                         </div>
                     </div>
                     
@@ -112,7 +111,7 @@
                 Planifiez vos infrastructures avec TTS GROUPE pour une connectivité durable et performante.
             </p>
             <div class="flex justify-center">
-                <a href="{{ url('/') }}#contact" class="inline-flex items-center px-10 py-5 bg-orange-500 text-white rounded-full font-black text-lg">
+                <a href="{{ url('/') }}#contact" class="inline-flex items-center px-10 py-5 bg-[#00A3A2] text-white rounded-full font-black text-lg">
                     Nous contacter
                     <svg class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </a>

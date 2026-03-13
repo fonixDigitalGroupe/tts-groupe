@@ -1,129 +1,168 @@
 @extends('layouts.app')
 
 @section('content')
+
     <!-- Hero Section -->
-    <section class="bg-[#2563eb] text-white py-20 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="grid grid-cols-4 gap-1">
-                        @for ($i = 0; $i < 16; $i++)
-                            <div class="w-1.5 h-1.5 bg-cyan-300 opacity-{{ rand(40, 90) }}"></div>
-                        @endfor
-                    </div>
-                    <h1 class="text-3xl font-bold tracking-tight">TTS GROUPE</h1>
-                </div>
-                <p class="text-xl font-medium opacity-90">À Propos de Nous</p>
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00A3A2]/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
             </div>
         </div>
     </section>
 
     <!-- Qui sommes-nous ? -->
-    <section class="py-20 bg-gray-50/50">
+    <section class="py-24 bg-gray-50/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-2">Qui sommes-nous ?</h2>
-                <div class="w-16 h-1 bg-blue-950 mx-auto rounded-full mb-8"></div>
-                <h3 class="text-xl font-bold text-blue-800 mb-6">Votre Partenaire Télécom de Confiance</h3>
-                <p class="text-gray-700 max-w-5xl mx-auto leading-relaxed text-center font-medium">
-                    <span class="font-bold text-blue-900">TTS GROUPE</span> est une entreprise spécialisée dans les <span class="text-blue-700 font-bold">travaux Télécom et Fibre Optique</span>, intervenant sur les marchés <span class="text-blue-700 font-bold">européens et africains</span>. Notre double expertise &ndash; Bureau d'Études et Production Terrain &ndash; nous permet d'accompagner nos clients sur l'ensemble de la chaîne de valeur des réseaux télécom.
-                </p>
-            </div>
-
-            <!-- Expertise Cards -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Bureau d'Études -->
-                <div class="bg-gray-50/50 p-8 rounded-3xl border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Qui <span class="text-[#00A3A2]">sommes-nous ?</span></h2>
+                    <h3 class="text-xl font-bold text-blue-900 mb-6">Votre Partenaire Télécom de Confiance</h3>
+                    <p class="text-gray-500 text-lg leading-relaxed mb-8 font-medium">
+                        <span class="text-blue-950 font-bold">TTS GROUPE</span> est une entreprise spécialisée dans les travaux Télécom et Fibre Optique, intervenant sur les marchés européens et africains. Notre double expertise – Bureau d'Études et Production Terrain – nous permet d'accompagner nos clients sur l'ensemble de la chaîne de valeur des réseaux télécom.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <div class="text-[#00A3A2] font-black text-2xl mb-1">2017</div>
+                            <div class="text-gray-500 text-sm font-bold uppercase tracking-wider">Année de création</div>
                         </div>
-                        <h4 class="text-xl font-bold text-blue-900">Bureau d'Études & Innovation</h4>
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <div class="text-[#00A3A2] font-black text-2xl mb-1">Double</div>
+                            <div class="text-gray-500 text-sm font-bold uppercase tracking-wider">Expertise Études/Terrain</div>
+                        </div>
                     </div>
-                    <ul class="space-y-6">
-                        <li>
-                            <p class="font-bold text-gray-900 mb-1">Études Réseaux FTTA / FTTH / FTTO</p>
-                            <p class="text-gray-600">Conception et dimensionnement de réseaux fibre optique pour les opérateurs et collectivités.</p>
-                        </li>
-                        <li>
-                            <p class="font-bold text-gray-900 mb-1">SIG & Cartographie</p>
-                            <p class="text-gray-600">Maîtrise des bases de données géospatiales et analyse territoriale : urbanisme, agriculture, énergies renouvelables.</p>
-                        </li>
-                        <li>
-                            <p class="font-bold text-gray-900 mb-1">Développement Logiciel Sur Mesure</p>
-                            <p class="text-gray-600">Solutions innovantes pour optimiser la gestion et le déploiement des infrastructures.</p>
-                        </li>
-                    </ul>
                 </div>
-
-                <!-- Production Terrain -->
-                <div class="bg-gray-50/50 p-8 rounded-3xl border border-gray-100 flex flex-col items-start shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.533 1.533 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-blue-900">Production Terrain</h4>
+                <div class="lg:w-1/2 relative">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl">
+                        <img src="{{ asset('images/about_technician.png') }}" onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" alt="Expertise TTS" class="w-full h-full object-cover">
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-orange-600 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
-                            <div>
-                                <p class="font-bold text-gray-900">Raccordement Abonné FTTH</p>
-                                <p class="text-sm text-gray-600">Du boîtier au logement : tirage de câble, soudure, mesures optiques, mise en service.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-orange-600 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
-                            <div>
-                                <p class="font-bold text-gray-900">SAV & Diagnostic</p>
-                                <p class="text-sm text-gray-600">Intervention rapide, recherche de pannes, reprises de soudures et remise en conformité.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-orange-600 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.533 1.533 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
-                            <div>
-                                <p class="font-bold text-gray-900">Maintenance Réseau</p>
-                                <p class="text-sm text-gray-600">Maintenance préventive et corrective sur infrastructures aériennes et souterraines.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-orange-600 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C7.537 4.214 9.176 4 11 4c3.085 0 5.483 2 6.5 5h-1.532c-.933-2.071-3.13-3-4.968-3-2.15 0-4.067 1.258-4.904 3.193a.5.5 0 00-.096.257c0 .138.112.25.25.25H7c.138 0 .25-.112.25-.25 0-.103-.06-.2-.154-.243zM3.478 8.117a.5.5 0 01.354-.483c.241-.072.483-.117.726-.134.138-.01.25.101.25.239v1.077c0 .138-.112.25-.25.25h-.926c-.138 0-.25-.112-.25-.25V8.117z"></path></svg>
-                            <div>
-                                <p class="font-bold text-gray-900">Déploiement & Densification</p>
-                                <p class="text-sm text-gray-600">Déploiement complet de réseaux FTTH, pose de boîtiers, extensions et contrôles qualité.</p>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Terrain d'Action (Gallery) -->
-    <section class="py-20 bg-gray-50/30 overflow-hidden">
+    <!-- Expertise Cards -->
+    <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-2">Notre Terrain d'Action</h2>
-                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-6"></div>
-                <p class="text-gray-600">Découvrez nos équipes au cœur de l'action</p>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Bureau d'Études -->
+                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all">
+                    <div class="mb-10">
+                        <div class="w-16 h-16 bg-blue-50 text-[#00A3A2] rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-blue-950 mb-4 tracking-tight">Bureau d'Études & Innovation</h4>
+                        <p class="text-gray-500 font-medium">Conception et ingénierie de précision pour vos futurs réseaux.</p>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00A3A2] mt-2.5 mr-4"></div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">Études Réseaux FTTA / FTTH / FTTO</h5>
+                                <p class="text-gray-500 text-sm font-medium">Conception et dimensionnement de réseaux fibre optique pour les opérateurs et collectivités.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00A3A2] mt-2.5 mr-4"></div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">SIG & Cartographie</h5>
+                                <p class="text-gray-500 text-sm font-medium">Maîtrise des bases de données géospatiales et analyse territoriale : urbanisme, agriculture.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#00A3A2] mt-2.5 mr-4"></div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">Développement Logiciel</h5>
+                                <p class="text-gray-500 text-sm font-medium">Solutions innovantes pour optimiser la gestion et le déploiement des infrastructures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Terrain -->
+                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all">
+                    <div class="mb-10">
+                        <div class="w-16 h-16 bg-blue-50 text-[#00A3A2] rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-blue-950 mb-4 tracking-tight">Production Terrain</h4>
+                        <p class="text-gray-500 font-medium">Interventions techniques spécialisées directement sur site.</p>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[#00A3A2] flex items-center justify-center mr-4">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">Raccordement Abonné FTTH</h5>
+                                <p class="text-gray-500 text-sm font-medium">Du boîtier au logement : tirage de câble, soudure, mesures optiques, mise en service.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[#00A3A2] flex items-center justify-center mr-4">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">SAV & Diagnostic</h5>
+                                <p class="text-gray-500 text-sm font-medium">Intervention rapide, recherche de pannes, reprises de soudures et remise en conformité.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[#00A3A2] flex items-center justify-center mr-4">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-blue-950 mb-1 leading-tight">Maintenance & Déploiement</h5>
+                                <p class="text-gray-500 text-sm font-medium">Maintenance préventive et corrective sur infrastructures aériennes et souterraines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terrain d'Action (Gallery) -->
+    <section class="py-24 bg-gray-50/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Notre <span class="text-[#00A3A2]">Terrain d'Action</span></h2>
+                <p class="text-gray-500 font-medium">Découvrez nos équipes au cœur de l'action sur le terrain.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
                 @php
                     $gallery = [
-                        ['img' => 'equipe_1.png', 'label' => 'Équipe terrain - Densification K46'],
-                        ['img' => 'equipe_2.png', 'label' => 'Intervention aérienne - Traverse Senelec'],
-                        ['img' => 'equipe_3.png', 'label' => 'Préparation chantier - Logistique terrain'],
-                        ['img' => 'equipe_4.png', 'label' => 'Soudeuse fibre optique Sumitomo TYPE-71C'],
-                        ['img' => 'equipe_3.png', 'label' => 'Présence sur site N00'],
+                        ['img' => 'equipe_1.png', 'label' => 'Terrain', 'desc' => 'Équipe terrain - Densification K46'],
+                        ['img' => 'equipe_2.png', 'label' => 'Aérien', 'desc' => 'Intervention aérienne - Traverse Senelec'],
+                        ['img' => 'equipe_3.png', 'label' => 'Logistique', 'desc' => 'Préparation chantier - Logistique terrain'],
+                        ['img' => 'equipe_4.png', 'label' => 'Équipement', 'desc' => 'Soudeuse fibre optique Sumitomo TYPE-71C'],
+                        ['img' => 'equipe_3.png', 'label' => 'Expertise', 'desc' => 'Présence sur site N00'],
                     ];
                 @endphp
                 @foreach ($gallery as $item)
-                    <div class="relative group rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
-                        <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['label'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-4">
-                            <p class="text-white text-xs font-bold leading-tight">{{ $item['label'] }}</p>
+                    <div class="relative group rounded-[2rem] overflow-hidden aspect-[3/2] shadow-sm bg-gray-100 border border-gray-100">
+                        <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['desc'] }}" class="w-full h-full object-cover">
+                        <!-- Badge -->
+                        <div class="absolute top-4 left-4 z-10 px-3 py-1 bg-[#00A3A2]/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full">
+                            {{ $item['label'] }}
                         </div>
+                        <!-- Info Overlay -->
+                        <div class="absolute inset-x-3 bottom-3 z-10 p-4 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-white font-bold text-xs leading-tight">{{ $item['desc'] }}</h4>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
                     </div>
                 @endforeach
             </div>
@@ -131,37 +170,42 @@
     </section>
 
     <!-- Moyens Humains & Matériels -->
-    <section class="py-20 bg-white">
+    <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Moyens Humains & Matériels</h2>
-                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-10"></div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-10 tracking-tight">Moyens <span class="text-[#00A3A2]">Humains & Matériels</span></h2>
             </div>
 
-            <div class="space-y-4 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 @php
                     $moyens = [
-                        ['icon' => 'users', 'label' => '12 salariés qualifiés terrain'],
-                        ['icon' => 'cog', 'label' => 'Équipes dédiées : production, SAV, maintenance, déploiement'],
-                        ['icon' => 'truck', 'label' => '2 pick-up'],
-                        ['icon' => 'truck', 'label' => '5 à 6 véhicules utilitaires'],
-                        ['icon' => 'shield-check', 'label' => 'Équipements complets de sécurité (EPI)'],
+                        ['icon' => 'users', 'label' => 'Effectifs', 'desc' => '12 salariés qualifiés terrain'],
+                        ['icon' => 'cog', 'label' => 'Équipes', 'desc' => 'Équipes dédiées : production, SAV, maintenance, déploiement'],
+                        ['icon' => 'truck', 'label' => 'Véhicules', 'desc' => '2 pick-up'],
+                        ['icon' => 'truck', 'label' => 'Utilitaires', 'desc' => '5 à 6 véhicules utilitaires'],
+                        ['icon' => 'shield-check', 'label' => 'Sécurité', 'desc' => 'Équipements complets de sécurité (EPI)'],
+                        ['icon' => 'wrench', 'label' => 'Matériel', 'desc' => 'Matériel professionnel fibre optique (soudeuses, réflectomètres, outillage spécialisé)'],
                     ];
                 @endphp
                 @foreach ($moyens as $moyen)
-                    <div class="bg-gray-50/50 p-6 rounded-2xl flex items-center space-x-6 border border-gray-100 hover:bg-gray-100 transition-colors">
-                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-900 shadow-sm border border-gray-100">
+                    <div class="bg-gray-50/10 p-8 rounded-[2rem] flex items-center space-x-6 border border-gray-100 shadow-sm transition-all hover:shadow-md">
+                        <div class="w-14 h-14 bg-[#00A3A2] rounded-full flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-[#00A3A2]/20">
                             @if($moyen['icon'] == 'users')
                                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                             @elseif($moyen['icon'] == 'cog')
-                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg>
                             @elseif($moyen['icon'] == 'truck')
                                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4-4m-4 4l4 4" /></svg>
                             @elseif($moyen['icon'] == 'shield-check')
                                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                            @elseif($moyen['icon'] == 'wrench')
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                             @endif
                         </div>
-                        <span class="text-gray-700 font-medium text-lg">{{ $moyen['label'] }}</span>
+                        <div>
+                            <span class="block text-blue-950 font-black text-sm uppercase tracking-widest mb-1">{{ $moyen['label'] }}</span>
+                            <span class="text-gray-500 font-medium text-lg leading-tight block">{{ $moyen['desc'] }}</span>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -169,48 +213,49 @@
     </section>
 
     <!-- Matériel Professionnel (Text on Background) -->
-    <section class="relative h-64 flex items-center justify-center">
-        <div class="absolute inset-0 bg-blue-900/80 z-10"></div>
-        <img src="{{ asset('images/equipe_4.png') }}" alt="Background" class="absolute inset-0 w-full h-full object-cover">
-        <div class="relative z-20 text-center px-4">
-            <h3 class="text-3xl font-bold text-white mb-4">Matériel Professionnel</h3>
-            <p class="text-blue-100 text-lg">Soudeuses Sumitomo, réflectomètres, outillage spécialisé de dernière génération</p>
+    <section class="relative h-80 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-blue-950/80 z-10"></div>
+        <img src="{{ asset('images/equipe_4.png') }}" alt="Matériel Pro" class="absolute inset-0 w-full h-full object-cover">
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+            <h3 class="text-3xl md:text-5xl font-semibold text-white mb-6 tracking-tight">Matériel Professionnel</h3>
+            <p class="text-blue-100 text-lg md:text-xl font-medium leading-relaxed">
+                Soudeuses Sumitomo, réflectomètres, outillage spécialisé de dernière génération pour des interventions précises et durables.
+            </p>
         </div>
     </section>
 
-    <!-- Sécurité - Qualité - Planning -->
-    <section class="py-20 bg-gray-50/50">
+    <!-- Engagements -->
+    <section class="py-24 bg-gray-50/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900 mb-2">Sécurité &ndash; Qualité &ndash; Planning</h2>
-                <div class="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-8"></div>
-                <p class="text-gray-600">La sécurité est une priorité sur l'ensemble de nos chantiers.</p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Sécurité – <span class="text-[#00A3A2]">Qualité – Planning</span></h2>
+                <p class="text-gray-500 font-medium max-w-2xl mx-auto">La sécurité et la communication sont les piliers de notre méthodologie sur l'ensemble de nos chantiers.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
                 @php
                     $engagements = [
-                        ['icon' => 'shield', 'title' => 'Sécurité', 'desc' => 'Port systématique des EPI et respect strict des règles HSE', 'color' => 'blue'],
-                        ['icon' => 'check-circle', 'title' => 'Qualité', 'desc' => 'Engagement sur la qualité des travaux réalisés', 'color' => 'orange'],
-                        ['icon' => 'clock', 'title' => 'Planning', 'desc' => 'Respect des délais et méthodologies adaptées', 'color' => 'blue'],
-                        ['icon' => 'chat', 'title' => 'Communication', 'desc' => 'Communication claire et efficace avec nos clients', 'color' => 'orange'],
+                        ['icon' => 'shield', 'title' => 'Sécurité', 'desc' => 'Port systématique des EPI et respect HSE.'],
+                        ['icon' => 'check-circle', 'title' => 'Qualité', 'desc' => 'Engagement total sur la durabilité.'],
+                        ['icon' => 'clock', 'title' => 'Planning', 'desc' => 'Respect strict des délais impartis.'],
+                        ['icon' => 'chat', 'title' => 'Communication', 'desc' => 'Échanges fluides et reporting précis.'],
                     ];
                 @endphp
                 @foreach ($engagements as $eng)
-                    <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
-                        <div class="w-16 h-16 mb-6 rounded-full flex items-center justify-center text-white {{ $eng['color'] == 'blue' ? 'bg-blue-900' : 'bg-orange-600' }}">
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center flex flex-col items-center group hover:border-[#00A3A2]/30 transition-all">
+                        <div class="w-14 h-14 mb-6 rounded-2xl bg-blue-50 text-[#00A3A2] flex items-center justify-center group-hover:bg-[#00A3A2] group-hover:text-white transition-all duration-300">
                             @if($eng['icon'] == 'shield')
-                                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                             @elseif($eng['icon'] == 'check-circle')
-                                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             @elseif($eng['icon'] == 'clock')
-                                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             @elseif($eng['icon'] == 'chat')
-                                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                             @endif
                         </div>
-                        <h4 class="text-xl font-bold text-blue-900 mb-2">{{ $eng['title'] }}</h4>
-                        <p class="text-gray-600">{{ $eng['desc'] }}</p>
+                        <h4 class="text-xl font-bold text-blue-950 mb-2 tracking-tight">{{ $eng['title'] }}</h4>
+                        <p class="text-gray-500 text-sm font-medium leading-relaxed">{{ $eng['desc'] }}</p>
                     </div>
                 @endforeach
             </div>

@@ -1,8 +1,7 @@
 <section class="py-24 bg-gray-50/50 border-y border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
-            <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Références clients</h2>
-            <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
+            <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Références <span class="text-[#00A3A2]">clients</span></h2>
             <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">Ils nous font confiance pour leurs projets télécom</p>
         </div>
 

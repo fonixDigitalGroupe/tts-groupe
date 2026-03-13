@@ -5,7 +5,7 @@
     <div class="bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-8">
             <a href="{{ url('/') }}" class="inline-flex items-center">
-                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white mr-4">
+                <div class="w-12 h-12 bg-[#00A3A2] rounded-full flex items-center justify-center text-white mr-4">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 </div>
                 <div class="text-left">
@@ -28,17 +28,19 @@
         </div>
         <!-- Background Decor -->
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/20 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00A3A2]/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
     </section>
 
     <!-- Content Section -->
     <section class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Nos domaines d'expertise</h2>
-                <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
-                <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
-                    Le Bureau d'Études de <span class="text-blue-950 font-bold border-b-2 border-orange-500/30">TTS GROUPE</span> est le moteur de notre développement, alliant excellence technique et vision globale.
+                <div class="px-3 py-1 bg-[#f0faf9] border border-[#00A3A2]/20 rounded-full inline-block mb-4">
+                    <span class="text-[#00A3A2] text-xs font-bold uppercase tracking-widest">Innovation & Expertise</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-8">Bureau <span class="text-[#00A3A2]">d'études</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Le Bureau d'Études de <span class="text-blue-950 font-bold border-b-2 border-[#00A3A2]/30">TTS GROUPE</span> est le moteur de notre développement, alliant excellence technique et vision globale.
                 </p>
             </div>
 
@@ -48,12 +50,12 @@
                 <!-- 1. Études Réseaux Télécom -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">Études réseaux télécom</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">FTTA • FTTH • FTTO</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#00A3A2] text-[10px] font-black uppercase tracking-widest rounded-full">FTTA • FTTH • FTTO</span>
                         </div>
                     </div>
                     
@@ -80,12 +82,12 @@
                 <!-- 2. SIG & Cartographie -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">SIG & cartographie</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Analyse Géospatiale</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#00A3A2] text-[10px] font-black uppercase tracking-widest rounded-full">Analyse Géospatiale</span>
                         </div>
                     </div>
                     
@@ -112,12 +114,12 @@
                 <!-- 3. Développement Logiciel -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">Développement logiciel</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Solutions Digitales</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#00A3A2] text-[10px] font-black uppercase tracking-widest rounded-full">Solutions Digitales</span>
                         </div>
                     </div>
                     
@@ -144,12 +146,12 @@
                 <!-- 4. Détection & Numérisation -->
                 <div class="relative bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
                     <div class="flex items-center space-x-6 mb-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-orange-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-[#00A3A2]">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-950 mb-1">Détection & numérisation</h3>
-                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-black uppercase tracking-widest rounded-full">Précision Terrestre</span>
+                            <span class="px-3 py-1 bg-[#f0faf9] text-[#00A3A2] text-[10px] font-black uppercase tracking-widest rounded-full">Précision Terrestre</span>
                         </div>
                     </div>
                     
@@ -184,8 +186,8 @@
                 Confiez vos études techniques à un partenaire d'excellence présent sur deux continents pour des solutions durables et innovantes.
             </p>
             <div class="flex justify-center">
-                <a href="{{ url('/') }}#contact" class="inline-flex items-center px-10 py-5 bg-orange-500 text-white rounded-full font-black text-lg">
-                    Nous contacter
+                <a href="{{ url('/') }}#contact" class="inline-flex items-center px-10 py-5 bg-[#00A3A2] text-white rounded-full font-black text-lg hover:bg-[#008a89] transition-all transform hover:scale-105 shadow-xl shadow-[#00A3A2]/20">
+                    Nous contacter maintenant
                     <svg class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </a>
             </div>

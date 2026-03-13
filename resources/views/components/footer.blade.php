@@ -2,8 +2,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-                <div class="bg-white p-2 rounded-xl inline-block mb-4">
-                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-12 w-auto object-contain">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-white p-2 rounded-xl inline-block">
+                        <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-12 w-auto object-contain">
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase">TTS GROUPE</span>
                 </div>
                 <p class="text-gray-400 mb-6">Solutions innovantes pour votre entreprise. Excellence et engagement à votre service.</p>
                 <!-- Social Links -->
@@ -34,8 +37,8 @@
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contact</h4>
                 <p class="text-gray-400 font-medium mb-1">Téléphones :</p>
-                <p class="text-gray-300 font-bold text-lg">+33 6 59 24 44 03</p>
-                <p class="text-gray-300 font-bold text-lg mb-4">+33 6 46 55 85 78</p>
+                <p class="text-gray-300 text-lg">+33 6 59 24 44 03</p>
+                <p class="text-gray-300 text-lg mb-4">+33 6 46 55 85 78</p>
                 <p class="text-gray-400 font-medium mb-1">Email :</p>
                 <p class="text-gray-300 text-lg">contact@ttsgroupe.com</p>
             </div>
