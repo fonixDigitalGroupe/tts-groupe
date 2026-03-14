@@ -1,37 +1,42 @@
 @extends('admin.layout')
 
-@section('title', 'Gestion de l\'Inventaire')
+@section('title', 'Gestion des Produits')
 @section('page_title', 'Produits')
 
 @section('content')
 <div class="max-w-7xl mx-auto">
     
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <h1 class="text-3xl font-extrabold text-[#0f172a] tracking-tight">Gestion du Catalogue</h1>
+            <p class="text-slate-500 font-medium mt-1">Gérez votre inventaire et vos solutions techniques</p>
+        </div>
+        <a href="{{ route('admin.products.create') }}" class="btn-primary">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
+            AJOUTER UN PRODUIT
+        </a>
+    </div>
+
     <!-- DataTable Area -->
     <div class="datatable-wrapper">
         <!-- Control Header -->
         <div class="datatable-header">
-            <div class="flex items-center gap-8">
+            <div class="flex items-center gap-6">
                 <div class="datatable-control">
                     <span>Afficher</span>
-                    <select class="datatable-input px-2">
+                    <select class="datatable-input px-3">
                         <option>10</option>
                         <option selected>25</option>
                         <option>50</option>
-                        <option>100</option>
                     </select>
-                    <span>lignes</span>
                 </div>
-                <div class="datatable-control border-l border-slate-100 pl-8">
-                    <span>Chercher:</span>
-                    <input type="text" class="datatable-input w-48" placeholder="...">
+                <div class="h-6 w-px bg-slate-200"></div>
+                <div class="datatable-control">
+                    <div class="relative">
+                        <input type="text" class="datatable-input w-64 pl-9" placeholder="Trouver un produit...">
+                        <svg class="w-4 h-4 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
                 </div>
-            </div>
-
-            <div class="shrink-0">
-                <a href="{{ route('admin.products.create') }}" class="btn-primary px-6 py-2 text-[10px]">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                    NOUVEAU
-                </a>
             </div>
         </div>
 
@@ -39,61 +44,59 @@
             <table class="datatable">
                 <thead>
                     <tr>
-                        <th class="w-1/2">Référence Produit</th>
+                        <th class="w-2/5">Produit & Référence</th>
                         <th>Catégorie</th>
-                        <th class="text-right">Prix & Stock</th>
-                        <th class="text-right w-32">Gestion</th>
+                        <th>Prix & Stock</th>
+                        <th class="text-right w-40">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($products as $product)
-                    <tr>
+                    <tr class="group">
                         <td>
-                            <div class="flex items-center gap-6">
-                                <div class="relative shrink-0 w-12 h-12 bg-slate-100 border border-slate-200">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden border border-slate-100 flex-shrink-0">
                                     @if(!empty($product->images) && count($product->images) > 0)
-                                        <img src="{{ asset('storage/' . $product->images[0]) }}" class="w-full h-full object-cover">
+                                        <img src="{{ Storage::url($product->images[0]) }}" class="w-full h-full object-cover">
                                     @else
-                                        <div class="w-full h-full flex items-center justify-center text-slate-200">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                        <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                         </div>
                                     @endif
                                 </div>
-                                <div class="min-w-0">
-                                    <div class="font-bold text-slate-900 truncate text-sm mb-0.5">{{ $product->name }}</div>
-                                    <div class="text-[10px] text-slate-400 font-mono tracking-tighter uppercase opacity-60">REF-{{ str_pad($product->id, 4, '0', STR_PAD_LEFT) }}</div>
+                                <div class="flex flex-col min-w-0">
+                                    <span class="text-sm font-bold text-slate-900 leading-tight truncate">{{ $product->name }}</span>
+                                    <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mt-0.5">REF-P-{{ str_pad($product->id, 4, '0', STR_PAD_LEFT) }}</span>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                                {{ $product->category->name ?? 'NON CLASSÉ' }}
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-200">
+                                {{ $product->category->name ?? 'Sans catégorie' }}
                             </span>
                         </td>
-                        <td class="text-right">
-                            <div class="flex flex-col items-end">
-                                <div class="font-black text-slate-950 text-sm tracking-tight mb-1">{{ number_format($product->price, 0, ',', ' ') }} FCFA</div>
-                                @if($product->stock <= 5)
-                                    <div class="text-[9px] font-black text-rose-500 uppercase tracking-widest border border-rose-100 px-1.5">Alerte: {{ $product->stock }}</div>
-                                @else
-                                    <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest opacity-60">Stock: {{ $product->stock }}</div>
-                                @endif
+                        <td>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold text-[#00A3A2]">{{ number_format($product->price ?? 0, 0, ',', ' ') }} FCFA</span>
+                                <span class="text-[10px] @if(($product->stock ?? 0) > 0) text-green-500 @else text-rose-500 @endif font-bold uppercase tracking-tighter mt-0.5">
+                                    Stock : {{ $product->stock ?? 0 }}
+                                </span>
                             </div>
                         </td>
                         <td class="text-right">
-                            <div class="flex items-center justify-end gap-1">
+                            <div class="flex items-center justify-end gap-2">
                                 <a href="{{ route('admin.products.edit', $product) }}" 
-                                        class="p-2 action-btn-edit"
-                                        title="Détails">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                         class="action-btn action-btn-edit"
+                                         title="Modifier">
+                                    <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                                 </a>
                                 
-                                <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="inline" onsubmit="return confirm('Suppression définitive. Continuer ?')">
+                                <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="inline" onsubmit="return confirm('Supprimer ce produit définitivement ?')">
                                     @csrf @method('DELETE')
                                     <button type="submit" 
-                                            class="p-2 action-btn-delete"
-                                            title="Retirer">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            class="action-btn action-btn-delete"
+                                            title="Supprimer">
+                                        <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                     </button>
                                 </form>
                             </div>
@@ -102,7 +105,13 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-8 py-24 text-center">
-                            <p class="text-sm font-medium text-slate-400 italic">Aucune donnée disponible</p>
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="w-16 h-16 bg-slate-50 rounded-xl flex items-center justify-center text-slate-200 mb-4">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                </div>
+                                <p class="text-sm font-semibold text-slate-400">Aucun produit au catalogue</p>
+                                <p class="text-xs text-slate-300 mt-1">Ajoutez votre premier produit pour commencer.</p>
+                            </div>
                         </td>
                     </tr>
                     @endforelse
@@ -112,12 +121,12 @@
 
         <!-- Pagination Footer -->
         <div class="datatable-footer">
-            <div>
-                Affichage de {{ $products->count() }} produits sur {{ $products->total() ?? $products->count() }}
+            <div class="font-semibold text-slate-400 uppercase text-[10px] tracking-widest">
+                <span class="text-slate-900">{{ $products->count() }}</span> Produits affichés
             </div>
-            <div class="flex gap-px">
-                <button class="pagination-btn">Préc</button>
-                <button class="pagination-btn">Suiv</button>
+            <div class="flex gap-2">
+                <button class="pagination-btn" disabled>Précédent</button>
+                <button class="pagination-btn">Suivant</button>
             </div>
         </div>
     </div>

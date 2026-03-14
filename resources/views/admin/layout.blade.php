@@ -7,212 +7,272 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00B5B4; 
+            --primary: #00A3A2; 
+            --primary-light: #e6f6f6;
             --primary-dark: #008a89;
-            --border: #f1f5f9;
+            --secondary: #0f172a;
+            --bg-page: #ffffff;
+            --border: #e2e8f0;
             --slate-text: #64748b;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         body { 
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #0f172a;
+            background-color: var(--bg-page);
+            color: #1e293b;
             -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .page-title {
+            font-family: 'Outfit', sans-serif;
         }
         [x-cloak] { display: none !important; }
         
         /* ─── Premium Sidebar ─── */
         .sidebar {
-            background-color: #0f172a;
+            background-color: var(--secondary);
             width: 280px;
-            transition: width 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-link {
             display: flex;
             align-items: center;
-            padding: 0.875rem 1.25rem;
+            padding: 0.75rem 1rem;
             color: #94a3b8;
             font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 0;
-            margin: 0.125rem 1rem;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            margin: 0.25rem 0.75rem;
+            transition: all 0.2s;
         }
         .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: rgba(255, 255, 255, 0.05);
             color: #ffffff;
         }
         .nav-link.active {
-            background-color: rgba(0, 181, 180, 0.08);
-            color: var(--primary);
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 163, 162, 0.2);
         }
         .nav-link svg {
             width: 1.25rem;
             height: 1.25rem;
-            margin-right: 1rem;
+            margin-right: 0.875rem;
+            opacity: 0.7;
+        }
+        .nav-link.active svg {
+            opacity: 1;
         }
         
         /* ─── Modern Header ─── */
         .top-header {
-            height: 80px;
-            background-color: #ffffff;
+            height: 72px;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            padding: 0 3rem;
+            padding: 0 2rem;
         }
         
-        /* ─── Startup Cards ─── */
+        /* ─── UI Components ─── */
         .premium-card {
             background: #ffffff;
             border: 1px solid var(--border);
-            border-radius: 0;
-            transition: border-color 0.2s;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
         }
         .premium-card:hover {
-            border-color: #e2e8f0;
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
         }
         
         .btn-primary {
-            background: #0f172a;
+            background: var(--primary);
             color: white;
-            padding: 0.7rem 1.75rem;
-            border-radius: 0;
-            font-size: 0.75rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
+            padding: 0.625rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8125rem;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            border: 1px solid #1e293b;
-            position: relative;
+            gap: 0.5rem;
+            border: 1px solid var(--primary);
+            transition: all 0.2s;
+            cursor: pointer;
         }
         .btn-primary:hover {
-            background-color: #1e293b;
-            border-color: var(--primary);
-        }
-        .btn-primary:active {
-            background-color: #0f172a;
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 163, 162, 0.2);
         }
         
-        /* Colored Action Buttons */
+        /* Action Buttons */
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
         .action-btn-edit {
+            background-color: var(--primary-light);
             color: var(--primary);
-            opacity: 0.8;
-            transition: opacity 0.2s;
         }
         .action-btn-edit:hover {
-            opacity: 1;
+            background-color: var(--primary);
+            color: white;
         }
         .action-btn-delete {
+            background-color: #fff1f2;
             color: #f43f5e;
-            opacity: 0.8;
-            transition: opacity 0.2s;
         }
         .action-btn-delete:hover {
-            opacity: 1;
+            background-color: #f43f5e;
+            color: white;
         }
         
         .input-field {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0;
+            padding: 0.625rem 0.875rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
             font-size: 0.875rem;
-            font-weight: 500;
             transition: all 0.2s;
             background-color: #ffffff;
+            box-shadow: none !important;
+        }
+        .input-field::placeholder {
+            text-transform: none;
+        }
+        .input-capitalize {
+            text-transform: capitalize;
         }
         .input-field:focus {
             border-color: var(--primary);
             background-color: #ffffff;
             outline: none;
-            box-shadow: none;
+            ring: 2px;
+            ring-color: rgba(0, 163, 162, 0.1);
         }
-        /* DataTable Structure Styles */
+
+        /* ─── DataTable Enhanced ─── */
         .datatable-wrapper {
             background: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
             margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
             overflow: hidden;
         }
         .datatable-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid #f3f4f6;
-            font-size: 0.75rem;
-            color: #4b5563;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background-color: #ffffff;
         }
         .datatable-control {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            font-size: 0.8125rem;
+            color: var(--slate-text);
+            font-weight: 500;
         }
         .datatable-input {
-            border: 1px solid #e5e7eb;
-            padding: 0.4rem 0.75rem;
-            font-size: 0.75rem;
-            background: #ffffff;
-            outline: none;
-            transition: border-color 0.2s;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8125rem;
+            background: #f8fafc;
+            transition: all 0.2s;
         }
         .datatable-input:focus {
             border-color: var(--primary);
+            background: white;
+            outline: none;
         }
         .datatable {
             width: 100%;
             border-collapse: collapse;
         }
-        .datatable th, .datatable td {
-            border: 1px solid #f3f4f6;
-            padding: 1.25rem 1.5rem;
-            text-align: left;
-        }
         .datatable th {
-            background: transparent;
+            background: #ffffff;
             text-transform: uppercase;
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: #1f2937;
-            letter-spacing: 0.1em;
-            border-bottom: 2px solid #f3f4f6;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: var(--slate-text);
+            letter-spacing: 0.05em;
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+        .datatable td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            font-size: 0.875rem;
+            vertical-align: middle;
+        }
+        .datatable th:last-child, .datatable td:last-child {
+            border-right: none;
+        }
+        .datatable tbody tr:last-child td {
+            border-bottom: none;
         }
         .datatable tbody tr {
-            transition: background-color 0.1s ease;
+            transition: background-color 0.2s;
         }
         .datatable tbody tr:hover {
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
         }
         .datatable-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
-            border-top: 1px solid #f3f4f6;
-            font-size: 0.75rem;
-            color: #6b7280;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border);
+            background-color: #ffffff;
+            font-size: 0.8125rem;
+            color: var(--slate-text);
+            font-weight: 500;
         }
         .pagination-btn {
             padding: 0.5rem 1rem;
-            border: 1px solid #e5e7eb;
-            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
             font-weight: 600;
-            color: #374151;
+            color: #475569;
+            transition: all 0.2s;
         }
-        .pagination-btn:hover {
-            background: #f9fafb;
-            color: var(--primary);
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--primary);
+            color: white;
             border-color: var(--primary);
         }
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 4px; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #e2e8f0; }
-        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="antialiased h-full">

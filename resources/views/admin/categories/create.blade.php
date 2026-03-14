@@ -19,14 +19,14 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Nom de la catégorie</label>
                     <input type="text" name="name" required 
-                           class="input-field shadow-sm" 
+                           class="input-field input-capitalize" 
                            placeholder="ex: Outillage Professionnel">
                 </div>
                 
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Description</label>
                     <textarea name="description" rows="5" 
-                              class="input-field py-4 shadow-sm" 
+                              class="input-field" 
                               placeholder="Décrivez l'utilité de cette catégorie pour vos clients..."></textarea>
                 </div>
             </div>
