@@ -91,13 +91,11 @@
 
     <!-- Simple Related Products -->
     @if($relatedProducts->count() > 0)
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <div class="mb-6 border-b border-gray-100 pb-2">
-            <h3 class="text-[12px] font-black text-[#282828] uppercase tracking-[0.2em]">
-                Autres produits
-            </h3>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        <div class="mb-4 border-b border-gray-100 pb-2">
+            <h3 class="text-[12px] font-black text-[#282828] uppercase tracking-[0.2em]">Autres produits</h3>
         </div>
-        <div class="flex flex-wrap gap-4 justify-start">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
             @foreach($relatedProducts as $related)
                 @include('partials.product-card-horizontal', ['product' => $related])
             @endforeach

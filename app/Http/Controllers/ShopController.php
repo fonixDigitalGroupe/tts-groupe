@@ -31,19 +31,29 @@ class ShopController extends Controller
             $query->where('price', '>=', $request->min_price);
         }
 
-        if ($request->has('max_price') && $request->max_price !== '') {
-            $query->where('price', '<=', $request->max_price);
+        if ($request->has('sort')) {
+            switch ($request->sort) {
+                case 'price_asc': $query->orderBy('price', 'asc'); break;
+                case 'price_desc': $query->orderBy('price', 'desc'); break;
+                default: $query->latest(); break;
+            }
+        } else {
+            $query->latest();
         }
 
         $isFiltered = $request->anyFilled(['category', 'search', 'min_price', 'max_price']);
+        $currentCategory = null;
+        if ($request->has('category') && $request->category !== '') {
+            $currentCategory = Category::where('slug', $request->category)->first();
+        }
 
         $featuredProducts = Product::where('is_active', true)->where('is_featured', true)->with('category')->latest()->take(10)->get();
         $newProducts = Product::where('is_active', true)->where('is_new', true)->with('category')->latest()->take(10)->get();
         
-        $products = $query->latest()->paginate(12)->withQueryString();
+        $products = $query->paginate(12)->withQueryString();
         $categories = Category::where('is_active', true)->get();
 
-        return view('pages.shop', compact('products', 'categories', 'featuredProducts', 'newProducts', 'isFiltered'));
+        return view('pages.shop', compact('products', 'categories', 'featuredProducts', 'newProducts', 'isFiltered', 'currentCategory'));
     }
 
     public function show(Product $product)
