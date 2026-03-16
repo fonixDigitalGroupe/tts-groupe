@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AdminController;
 
 Route::get('/', function () {
@@ -11,6 +12,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/bureau-etudes', [AboutController::class, 'bureauEtudes'])->name('bureau-etudes');
 Route::get('/production-terrain', [AboutController::class, 'productionTerrain'])->name('production-terrain');
 Route::get('/raccordement', [AboutController::class, 'raccordement'])->name('raccordement');
@@ -48,6 +50,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Settings & Users
         Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
+        Route::put('/settings', [AdminController::class, 'settingsUpdate'])->name('settings.update');
         Route::get('/users/create', [AdminController::class, 'usersCreate'])->name('users.create');
         Route::post('/users', [AdminController::class, 'usersStore'])->name('users.store');
         Route::get('/users/{user}/edit', [AdminController::class, 'usersEdit'])->name('users.edit');

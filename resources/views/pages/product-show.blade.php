@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', $product->name . ' - Boutique TTS GROUPE')
+@section('meta_description', Str::limit(strip_tags($product->description), 160))
+
 @section('content')
 <div class="bg-[#f5f5f5] min-h-screen pb-12">
     <!-- Breadcrumbs -->
@@ -14,7 +17,7 @@
     </div>
 
     <!-- Product Details Section -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ qty: 1 }">
         <div class="bg-white rounded shadow-sm overflow-hidden border border-gray-100">
             <div class="flex flex-col md:flex-row gap-0">
                 
@@ -68,11 +71,12 @@
                     <!-- Action Bar -->
                     <div class="flex items-center gap-3 py-6 border-y border-gray-50 my-6">
                         <div class="flex items-center border border-gray-100 rounded bg-gray-50 overflow-hidden h-10">
-                            <button onclick="updateQty(-1)" class="w-8 h-full flex items-center justify-center hover:bg-gray-200 text-gray-500 font-bold">-</button>
-                            <input id="product-qty" type="number" value="1" min="1" class="w-10 h-full text-center border-none bg-transparent font-bold text-gray-700 text-sm focus:ring-0">
-                            <button onclick="updateQty(1)" class="w-8 h-full flex items-center justify-center hover:bg-gray-200 text-gray-500 font-bold">+</button>
+                            <button @click="if(qty > 1) qty--" class="w-8 h-full flex items-center justify-center hover:bg-gray-200 text-gray-500 font-bold">-</button>
+                            <input type="number" x-model="qty" min="1" class="w-10 h-full text-center border-none bg-transparent font-bold text-gray-700 text-sm focus:ring-0">
+                            <button @click="qty++" class="w-8 h-full flex items-center justify-center hover:bg-gray-200 text-gray-500 font-bold">+</button>
                         </div>
-                        <button class="flex-grow h-10 bg-[#1A1B4B] text-white text-[12px] font-black rounded shadow hover:bg-[#25265e] transition-all flex items-center justify-center gap-2 uppercase tracking-wider">
+                        <button @click="$store.cart.addItem({{ $product->id }}, '{{ addslashes($product->name) }}', {{ $product->price }}, '{{ asset('storage/' . $images[0]) }}', parseInt(qty))"
+                                class="flex-grow h-10 bg-[#1A1B4B] text-white text-[12px] font-black rounded shadow hover:bg-[#25265e] transition-all flex items-center justify-center gap-2 uppercase tracking-wider">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                             Ajouter au panier
                         </button>
@@ -107,13 +111,6 @@
 <script>
     function changeMainImage(src) {
         document.getElementById('main-product-image').src = src;
-    }
-
-    function updateQty(delta) {
-        const input = document.getElementById('product-qty');
-        let val = parseInt(input.value) + delta;
-        if (val < 1) val = 1;
-        input.value = val;
     }
 </script>
 @endsection

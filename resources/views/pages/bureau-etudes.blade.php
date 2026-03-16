@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', "Bureau d'Études Télécom & SIG - TTS GROUPE")
+@section('meta_description', 'Conception, ingénierie de précision et cartographie SIG pour vos réseaux FTTH, FTTA et FTTO. L\'innovation au service de vos infrastructures.')
+
 @section('content')
     <!-- Navigation Band -->
     <div class="bg-white border-b border-gray-100">

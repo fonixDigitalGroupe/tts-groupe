@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Boutique TTS GROUPE - Matériel Télécom et Fibre Optique')
+@section('meta_description', 'Découvrez notre sélection de matériel professionnel pour les télécommunications et la fibre optique. Qualité et performance pour vos chantiers.')
+
 @section('content')
 <div class="min-h-screen bg-[#f8f9fa] pb-12">
     
@@ -28,10 +31,13 @@
                     </nav>
                 </div>
 
-                <!-- Middle Main Banner -->
                 <div class="flex-grow bg-white rounded shadow-sm overflow-hidden relative border border-gray-100">
                     <div class="h-[280px] md:h-[380px] w-full relative group">
-                        <img src="{{ asset('images/banniershop.jpg') }}" alt="Promotion TTS Groupe" class="w-full h-full object-cover">
+                        <img src="{{ asset('images/banniershop.jpg') }}" 
+                             alt="Promotion TTS Groupe" 
+                             class="w-full h-full object-cover"
+                             loading="lazy"
+                             fetchpriority="high">
                     </div>
                 </div>
 
@@ -49,10 +55,31 @@
                         </div>
                     </div>
                     <!-- Small Static Banner -->
-                    <div class="h-[240px] bg-[#1A1B4B] rounded shadow-sm overflow-hidden relative group p-5 flex flex-col justify-center">
+                    <div class="flex-1 bg-[#1A1B4B] rounded shadow-sm overflow-hidden relative group p-5 flex flex-col justify-center">
                         <div class="relative z-10">
                             <h3 class="text-white font-black text-xl leading-tight uppercase mb-2">Livraison<br><span class="text-[#00A3A2]">Pro</span></h3>
                             <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Partout au Sénégal</p>
+                        </div>
+                    </div>
+                    <!-- Contact Block -->
+                    <div class="flex-1 bg-white rounded shadow-sm border border-gray-100 p-4 flex flex-col justify-center gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-[#00A3A2]/10 flex items-center justify-center text-[#00A3A2] flex-shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Téléphone</h4>
+                                <p class="text-[12px] font-black text-[#1A1B4B]">+33 6 59 24 44 03</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-[#1A1B4B]/5 flex items-center justify-center text-[#1A1B4B] flex-shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Email</h4>
+                                <p class="text-[11px] font-bold text-[#1A1B4B] truncate" title="contact@ttsgroupe.com">contact@ttsgroupe.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,6 +90,20 @@
     <!-- Content Area -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         
+        <!-- Mobile Category Scroller -->
+        <div class="lg:hidden mb-6 -mx-4 px-4 overflow-x-auto pb-12 custom-scrollbar flex items-start gap-2 whitespace-nowrap">
+            <a href="{{ route('shop.index') }}" 
+               class="px-5 py-2.5 mb-4 rounded-full text-[13px] font-black transition-all {{ !request('category') ? 'bg-[#1A1B4B] text-white' : 'bg-white text-[#1A1B4B] border border-gray-100' }}">
+                Tout explorer
+            </a>
+            @foreach($categories as $category)
+            <a href="{{ route('shop.index', ['category' => $category->slug]) }}" 
+               class="px-5 py-2.5 mb-4 rounded-full text-[13px] font-black transition-all {{ request('category') == $category->slug ? 'bg-[#1A1B4B] text-white' : 'bg-white text-[#1A1B4B] border border-gray-100' }}">
+                {{ $category->name }}
+            </a>
+            @endforeach
+        </div>
+
         @if($isFiltered)
             <!-- BREADCRUMBS -->
             <nav class="flex items-center gap-2 text-[12px] text-gray-500 mb-4">
@@ -173,9 +214,8 @@
                         </div>
                     @endif
                 </main>
-            </div>
+            </div> {{-- Closes flex gap-6 --}}
         @else
-            </div>{{-- close max-w-7xl --}}
             <!-- LANDING PAGE SLIDERS (Preserved) -->
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-8">
                 @if($newProducts->count() > 0)
@@ -185,7 +225,6 @@
                             <svg class="w-5 h-5 text-[#1A1B4B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             Nouveautés
                         </div>
-                        <a href="{{ route('shop.index') }}" class="text-[11px] font-bold text-[#1A1B4B] hover:text-[#00A3A2] transition-colors">VOIR TOUT</a>
                     </div>
                     <div class="bg-white p-4 border border-t-0 border-gray-100 rounded-b relative group/slider">
                         <!-- Controls -->
@@ -228,11 +267,31 @@
                 @endif
             </div>{{-- close max-w-6xl sliders --}}
         @endif
+    </div>{{-- Close max-w-7xl from line 91 --}}
 </div>{{-- close min-h-screen --}}
 
 <style>
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 6px;
+    }
+    .custom-scrollbar {
+        padding-bottom: 25px !important;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #00A3A2;
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #1A1B4B;
+    }
+    
     body { font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
 </style>
 

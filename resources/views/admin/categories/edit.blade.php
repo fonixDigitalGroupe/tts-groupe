@@ -6,8 +6,8 @@
 @section('content')
 <div class="max-w-4xl mx-auto">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-10">
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Modifier la catégorie</h2>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Modifier la catégorie</h2>
         <a href="{{ route('admin.categories.index') }}" class="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-bold transition-all uppercase text-xs tracking-widest">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             Retour à la liste
@@ -37,11 +37,11 @@
                 </div>
             </div>
             
-            <div class="flex items-center justify-end gap-4 pt-4">
-                <a href="{{ route('admin.categories.index') }}" class="px-6 py-3 text-sm font-bold text-slate-500 hover:text-slate-800 transition-all">
+            <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-4 pt-4">
+                <a href="{{ route('admin.categories.index') }}" class="w-full sm:w-auto text-center px-6 py-3 text-sm font-bold text-slate-500 hover:text-slate-800 transition-all">
                     Annuler
                 </a>
-                <button type="submit" class="btn-primary shadow-lg shadow-[#00A3A2]/20 px-10">
+                <button type="submit" class="w-full sm:w-auto btn-primary shadow-lg shadow-[#00A3A2]/20 px-10">
                     Sauvegarder les modifications
                 </button>
             </div>

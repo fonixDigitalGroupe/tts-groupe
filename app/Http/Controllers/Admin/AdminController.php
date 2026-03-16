@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -177,7 +178,19 @@ class AdminController extends Controller
     public function settings()
     {
         $users = \App\Models\User::latest()->get();
-        return view('admin.settings', compact('users'));
+        $whatsapp_number = Setting::get('whatsapp_number');
+        return view('admin.settings', compact('users', 'whatsapp_number'));
+    }
+
+    public function settingsUpdate(Request $request)
+    {
+        $request->validate([
+            'whatsapp_number' => 'nullable|string|max:20',
+        ]);
+
+        Setting::set('whatsapp_number', $request->whatsapp_number);
+
+        return back()->with('success', 'Paramètres mis à jour avec succès.');
     }
 
     public function usersCreate()

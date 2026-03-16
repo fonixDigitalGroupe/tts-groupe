@@ -36,11 +36,11 @@
             </div>
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                <p class="text-gray-400 font-medium mb-1">Téléphones :</p>
-                <p class="text-gray-300 text-lg">+33 6 59 24 44 03</p>
-                <p class="text-gray-300 text-lg mb-4">+33 6 46 55 85 78</p>
-                <p class="text-gray-400 font-medium mb-1">Email :</p>
-                <p class="text-gray-300 text-lg">contact@ttsgroupe.com</p>
+                <p class="text-gray-400 font-medium mb-1 uppercase text-[10px] tracking-widest">Téléphones :</p>
+                <p class="text-gray-300 text-sm">+33 6 59 24 44 03</p>
+                <p class="text-gray-300 text-sm mb-4">+33 6 46 55 85 78</p>
+                <p class="text-gray-400 font-medium mb-1 uppercase text-[10px] tracking-widest">Email :</p>
+                <p class="text-gray-300 text-sm">contact@tts-groupe.com</p>
             </div>
         </div>
         <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">

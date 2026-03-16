@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00A3A2;
-            --primary-dark: #008f8e;
+            --primary: #172554;
+            --primary-dark: #1e3a8a;
             --slate-bg: #f8fafc;
         }
         body {
@@ -27,7 +27,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 163, 162, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(23, 37, 84, 0.3);
         }
         .input-focus:focus {
             border-color: var(--primary);
@@ -65,7 +65,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.206"></path></svg>
                         </span>
                         <input type="email" name="email" required autofocus
-                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#00A3A2] focus:ring-4 focus:ring-[#00A3A2]/5 outline-none transition-all"
+                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-4 focus:ring-[#172554]/5 outline-none transition-all"
                                placeholder="admin@tts-groupe.com">
                     </div>
                 </div>
@@ -77,9 +77,9 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </span>
                         <input type="password" name="password" id="password" required
-                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-12 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#00A3A2] focus:ring-4 focus:ring-[#00A3A2]/5 outline-none transition-all"
+                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-12 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-4 focus:ring-[#172554]/5 outline-none transition-all"
                                placeholder="••••••••">
-                        <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-300 hover:text-[#00A3A2] transition-colors">
+                        <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-300 hover:text-[#172554] transition-colors">
                             <svg id="eye-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path id="eye-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 <path id="eye-open-outer" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -112,7 +112,7 @@
 
                 <div class="flex items-center justify-between px-1">
                     <label class="flex items-center group cursor-pointer">
-                        <input type="checkbox" name="remember" class="w-4 h-4 rounded border-slate-300 text-[#00A3A2] focus:ring-[#00A3A2] transition-all">
+                        <input type="checkbox" name="remember" class="w-4 h-4 rounded border-slate-300 text-[#172554] focus:ring-[#172554] transition-all">
                         <span class="ml-2 text-xs font-bold text-slate-500 group-hover:text-slate-700 transition-colors">Se souvenir de moi</span>
                     </label>
                 </div>
@@ -123,9 +123,6 @@
             </form>
         </div>
 
-        <p class="text-center mt-8 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-            Expertise en Technologies & Systèmes de Pompage
-        </p>
     </div>
 
 </body>

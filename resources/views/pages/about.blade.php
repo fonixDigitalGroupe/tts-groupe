@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', "À Propos de TTS GROUPE - Bureau d'Études et Production Terrain")
+@section('meta_description', "Découvrez TTS GROUPE, expert en travaux télécom et fibre optique. Notre double expertise nous permet d'accompagner nos clients sur l'ensemble de la chaîne de valeur.")
+
 @section('content')
 
     <!-- Qui sommes-nous ? (Combined with Hero Background) -->
@@ -126,7 +129,7 @@
                 <p class="text-gray-500 font-medium">Découvrez nos équipes au cœur de l'action sur le terrain.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
                 @php
                     $gallery = [
                         ['img' => 'equipe_1.png', 'label' => 'Terrain', 'desc' => 'Équipe terrain - Densification K46'],

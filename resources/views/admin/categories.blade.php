@@ -6,12 +6,12 @@
 @section('content')
 <div class="max-w-6xl mx-auto">
     
-    <div class="flex items-center justify-between mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-            <h1 class="text-3xl font-extrabold text-[#0f172a] tracking-tight">Gestion des catégories</h1>
-            <p class="text-slate-500 font-medium mt-1">Organisez vos produits par secteurs d'activité</p>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">Gestion des catégories</h1>
+            <p class="text-slate-500 font-medium mt-1 text-sm sm:text-base">Organisez vos produits par secteurs d'activité</p>
         </div>
-        <a href="{{ route('admin.categories.create') }}" class="btn-primary">
+        <a href="{{ route('admin.categories.create') }}" class="btn-primary w-full sm:w-auto">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
             AJOUTER UNE CATÉGORIE
         </a>
@@ -21,7 +21,7 @@
     <div class="datatable-wrapper">
         <!-- Control Header -->
         <div class="datatable-header">
-            <div class="flex items-center gap-6">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 w-full">
                 <div class="datatable-control">
                     <span>Afficher</span>
                     <select class="datatable-input px-3 !bg-white">
@@ -30,10 +30,10 @@
                         <option selected>50</option>
                     </select>
                 </div>
-                <div class="h-6 w-px bg-slate-200"></div>
-                <div class="datatable-control">
-                    <div class="relative">
-                        <input type="text" class="datatable-input w-64 !bg-white" placeholder="Rechercher une catégorie...">
+                <div class="hidden sm:block h-6 w-px bg-slate-200"></div>
+                <div class="datatable-control flex-grow">
+                    <div class="relative w-full">
+                        <input type="text" class="datatable-input w-full sm:w-64 !bg-white" placeholder="Rechercher une catégorie...">
                     </div>
                 </div>
             </div>

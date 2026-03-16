@@ -8,19 +8,6 @@
                 </a>
             </div>
 
-            <!-- Search Bar -->
-            <div class="hidden lg:flex flex-1 max-w-md mx-8">
-                <div class="relative w-full">
-                    <input type="text" 
-                           class="w-full h-11 pl-4 pr-12 rounded-full border border-gray-200 focus:border-[#00A3A2] focus:ring-1 focus:ring-[#00A3A2] transition-all outline-none text-sm"
-                           placeholder="Rechercher un produit...">
-                    <button class="absolute right-0 top-0 h-full px-5 text-gray-400 hover:text-[#00A3A2] transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
 
             <!-- Navigation & Actions -->
             <div class="flex items-center space-x-4">
@@ -36,13 +23,16 @@
                 <!-- Actions Container -->
                 <div class="flex items-center space-x-3">
                     <!-- Shopping Cart Icon (Circular) -->
-                    <a href="#" class="relative p-2.5 bg-[#00A3A2]/10 text-[#00A3A2] rounded-full hover:bg-[#00A3A2]/20 transition-colors">
+                    <button @click="$store.cart.toggle()" class="relative p-2.5 bg-[#00A3A2]/10 text-[#00A3A2] rounded-full hover:bg-[#00A3A2]/20 transition-colors">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <!-- Static Red Badge -->
-                        <span class="absolute -top-1 -right-1 flex h-4 w-4 bg-red-600 rounded-full text-[9px] font-black text-white items-center justify-center shadow-sm">0</span>
-                    </a>
+                        <!-- Dynamic Badge -->
+                        <span x-show="$store.cart.count > 0" 
+                              x-text="$store.cart.count"
+                              class="absolute -top-1 -right-1 flex h-4 w-4 bg-red-600 rounded-full text-[9px] font-black text-white items-center justify-center shadow-sm"
+                              style="display: none;"></span>
+                    </button>
 
                     <!-- Mobile menu button (Circular) -->
                     <div class="md:hidden flex items-center">

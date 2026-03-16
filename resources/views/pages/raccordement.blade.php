@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Raccordement Fibre Optique FTTH - TTS GROUPE')
+@section('meta_description', 'Spécialiste du raccordement abonné : du boîtier au logement. Installation de qualité et mise en service rapide.')
+
 @section('content')
     <!-- Navigation Band -->
     <div class="bg-white border-b border-gray-100">

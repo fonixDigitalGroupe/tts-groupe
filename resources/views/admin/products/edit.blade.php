@@ -7,8 +7,8 @@
 <div class="max-w-4xl mx-auto space-y-10 pb-20">
     
     <!-- Header Section -->
-    <div class="flex items-center justify-between mb-10">
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Modifier le produit</h2>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Modifier le produit</h2>
         <a href="{{ route('admin.products.index') }}" class="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-bold transition-all uppercase text-xs tracking-widest">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             Retour à la liste
@@ -220,13 +220,13 @@
             }
         </script>
 
-        <div class="flex items-center justify-between pt-10 border-t border-slate-100">
-            <p class="text-[10px] text-slate-400 font-medium italic">Dernière mise à jour : {{ $product->updated_at->format('d/m/Y H:i') }}</p>
-            <div class="flex items-center gap-4">
-                <a href="{{ route('admin.products.index') }}" class="px-8 py-3 text-sm font-extrabold text-slate-400 hover:text-slate-600 transition-all uppercase tracking-widest">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 border-t border-slate-100">
+            <p class="text-[10px] text-slate-400 font-medium italic order-2 sm:order-1">Dernière mise à jour : {{ $product->updated_at->format('d/m/Y H:i') }}</p>
+            <div class="flex flex-col-reverse sm:flex-row items-center gap-4 w-full sm:w-auto order-1 sm:order-2">
+                <a href="{{ route('admin.products.index') }}" class="w-full sm:w-auto text-center px-8 py-3 text-sm font-extrabold text-slate-400 hover:text-slate-600 transition-all uppercase tracking-widest">
                     Annuler
                 </a>
-                <button type="submit" class="btn-primary px-12 py-4 h-auto text-sm uppercase tracking-widest shadow-xl shadow-[#00A3A2]/20">
+                <button type="submit" class="w-full sm:w-auto btn-primary px-12 py-4 h-auto text-sm uppercase tracking-widest shadow-xl shadow-[#00A3A2]/20">
                     Mettre à jour l'article
                 </button>
             </div>

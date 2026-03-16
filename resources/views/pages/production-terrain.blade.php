@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', 'Production Terrain Télécom - TTS GROUPE')
+@section('meta_description', "Interventions techniques spécialisées, raccordement abonné et maintenance d'infrastructures télécom directement sur site.")
+
 @section('content')
     <!-- Hero Section -->
     <section class="bg-[#2563eb] text-white py-20 text-center relative overflow-hidden">

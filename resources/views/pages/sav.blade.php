@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', "SAV & Diagnostic Réseaux Télécom - TTS GROUPE")
+@section('meta_description', 'Service après-vente réactif, recherche de pannes optiques et remise en conformité de vos installations fibre.')
+
 @section('content')
     <!-- Navigation Band -->
     <div class="bg-white border-b border-gray-100">

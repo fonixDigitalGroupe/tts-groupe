@@ -12,7 +12,11 @@
             
             <!-- Image Side -->
             <div class="lg:w-1/2 relative min-h-[400px] lg:min-h-full">
-                <img src="{{ asset('images/contact_technician.png') }}" onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" alt="Contact TTS Groupe" class="absolute inset-0 w-full h-full object-cover">
+                <img src="{{ asset('images/contact_technician.png') }}" 
+                     onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" 
+                     alt="Contact TTS Groupe" 
+                     class="absolute inset-0 w-full h-full object-cover"
+                     loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-transparent"></div>
             </div>
 
@@ -22,7 +26,20 @@
                     <h3 class="text-2xl md:text-3xl font-bold text-blue-950">Envoyez-nous un message</h3>
                 </div>
 
-                <form action="#" method="POST" class="space-y-6">
+                @if(session('success'))
+                    <div class="mb-6 p-4 bg-emerald-50 text-emerald-700 rounded-2xl font-bold text-sm">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="mb-6 p-4 bg-red-50 text-red-700 rounded-2xl font-bold text-sm">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+                    @csrf
                     <div>
                         <label for="name" class="block text-sm font-bold text-blue-950 mb-2">Nom complet</label>
                         <input type="text" id="name" name="name" class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:border-[#00A3A2] focus:bg-white focus:ring-0 outline-none transition-all placeholder:text-gray-400 font-medium" placeholder="Votre nom complet">

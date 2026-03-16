@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', "Déploiement Réseau Télécom - TTS GROUPE")
+@section('meta_description', 'Ingénierie et déploiement de réseaux fibre optique. Nous gérons vos projets de A à Z avec rigueur et expertise.')
+
 @section('content')
     <!-- Navigation Band -->
     <div class="bg-white border-b border-gray-100">

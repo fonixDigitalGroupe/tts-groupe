@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         :root {
             --primary: #00A3A2; 
@@ -42,6 +44,19 @@
             background-color: var(--secondary);
             width: 280px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 50;
+                transform: translateX(-100%);
+            }
+            .sidebar.mobile-open {
+                transform: translateX(0);
+            }
         }
         .nav-link {
             display: flex;
@@ -175,7 +190,8 @@
             border-radius: var(--radius-md);
             margin-top: 1.5rem;
             box-shadow: var(--shadow-sm);
-            overflow: hidden;
+            overflow-x: auto;
+            padding-bottom: 2rem;
         }
         .datatable-header {
             display: flex;
@@ -280,10 +296,23 @@
 </head>
 <body class="antialiased h-full">
 
-<div class="flex h-full overflow-hidden" x-data="{ sidebarOpen: true }">
+<div class="flex h-full overflow-hidden" x-data="{ sidebarOpen: true, mobileSidebarOpen: false }">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div x-show="mobileSidebarOpen" 
+         x-transition:enter="transition-opacity ease-linear duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-linear duration-300"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="mobileSidebarOpen = false"
+         class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 lg:hidden"
+         x-cloak></div>
 
     <!-- Sidebar -->
-    <aside class="sidebar flex flex-col shrink-0 z-40 relative shadow-2xl">
+    <aside class="sidebar flex flex-col shrink-0 z-50 relative shadow-2xl transition-transform duration-300 ease-in-out"
+           :class="{ 'mobile-open': mobileSidebarOpen, 'hidden lg:flex': !mobileSidebarOpen }">
         <div class="h-28 flex items-center px-8 border-b border-white/5">
             <div class="flex items-center gap-4">
                 <div class="w-16 h-16 bg-white flex items-center justify-center rounded-full border border-white/10 overflow-hidden shadow-xl ring-4 ring-white/5">
@@ -346,11 +375,18 @@
     <main class="flex-1 flex flex-col min-w-0 bg-transparent overflow-hidden">
         
         <!-- Top Header -->
-        <header class="top-header flex items-center justify-between shrink-0 sticky top-0 z-30">
+        <header class="top-header flex items-center justify-between shrink-0 sticky top-0 z-30 px-4 lg:px-8">
             <div class="flex items-center gap-4">
+                <!-- Mobile Menu Button -->
+                <button @click="mobileSidebarOpen = true" class="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
                 <a href="{{ url('/') }}" target="_blank" class="flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-[#00A3A2] bg-[#00A3A2]/10 hover:bg-[#00A3A2]/20 rounded-lg transition-all">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                    Site public
+                    <span class="hidden sm:inline">Site public</span>
                 </a>
             </div>
             
@@ -377,7 +413,7 @@
         </header>
 
         <!-- Page Content -->
-        <div class="flex-1 overflow-y-auto p-8 lg:p-12">
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-12">
             @yield('content')
         </div>
 
