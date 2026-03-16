@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Admin') | TTS Groupe Admin</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,7 +198,7 @@
             border-radius: 6px;
             padding: 0.5rem 0.75rem;
             font-size: 0.8125rem;
-            background: #f8fafc;
+            background: #ffffff;
             transition: all 0.2s;
         }
         .datatable-input:focus {
@@ -345,25 +348,30 @@
         <!-- Top Header -->
         <header class="top-header flex items-center justify-between shrink-0 sticky top-0 z-30">
             <div class="flex items-center gap-4">
+                <a href="{{ url('/') }}" target="_blank" class="flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-[#00A3A2] bg-[#00A3A2]/10 hover:bg-[#00A3A2]/20 rounded-lg transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    Site public
+                </a>
             </div>
             
             <div class="flex items-center gap-6">
                 <div class="hidden lg:flex items-center bg-slate-100 rounded-full px-4 py-2 border border-slate-200 focus-within:ring-2 focus-within:ring-[#00A3A2]/20 transition-all">
                     <svg class="w-4 h-4 text-slate-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <input type="text" placeholder="Recherche rapide..." class="bg-transparent border-none text-xs focus:ring-0 w-48 text-slate-600 outline-none">
+                    <input type="text" placeholder="Recherche rapide..." class="bg-transparent border-none text-xs focus:ring-0 w-72 focus:w-96 transition-all duration-300 text-slate-600 outline-none">
                 </div>
 
                 <div class="flex items-center gap-4 pl-6 border-l border-slate-200">
                     <div class="text-right hidden sm:block">
-                        <p class="text-xs font-bold text-slate-900 leading-none mb-1">{{ Auth::user()->name ?? 'Administrateur' }}</p>
-                        <p class="text-[10px] font-medium text-slate-500 uppercase tracking-tighter">Accès Total</p>
+                        <p class="text-xs font-bold text-slate-900 leading-none">{{ Auth::user()->name ?? 'Administrateur' }}</p>
                     </div>
-                    <div class="relative group">
-                        <div class="w-10 h-10 bg-[#eff6ff] border border-[#00A3A2]/10 flex items-center justify-center text-[#00A3A2] font-black text-sm transition-all">
-                            {{ substr(Auth::user()->name ?? 'A', 0, 1) }}
-                        </div>
-                        <span class="absolute bottom-0 right-0 block h-2.5 w-2.5 bg-green-500 border border-white"></span>
-                    </div>
+                    <form method="POST" action="{{ route('admin.logout') }}" class="relative group">
+                        @csrf
+                        <button type="submit" class="flex items-center justify-center text-[#f43f5e] hover:text-[#e11d48] transition-all cursor-pointer p-1" title="Se déconnecter">
+                            <svg class="w-6 h-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </header>

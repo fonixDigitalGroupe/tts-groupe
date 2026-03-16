@@ -8,7 +8,7 @@
     
     <div class="flex items-center justify-between mb-8">
         <div>
-            <h1 class="text-3xl font-extrabold text-[#0f172a] tracking-tight">Gestion des Catégories</h1>
+            <h1 class="text-3xl font-extrabold text-[#0f172a] tracking-tight">Gestion des catégories</h1>
             <p class="text-slate-500 font-medium mt-1">Organisez vos produits par secteurs d'activité</p>
         </div>
         <a href="{{ route('admin.categories.create') }}" class="btn-primary">
@@ -24,7 +24,7 @@
             <div class="flex items-center gap-6">
                 <div class="datatable-control">
                     <span>Afficher</span>
-                    <select class="datatable-input px-3">
+                    <select class="datatable-input px-3 !bg-white">
                         <option>10</option>
                         <option>25</option>
                         <option selected>50</option>
@@ -33,7 +33,7 @@
                 <div class="h-6 w-px bg-slate-200"></div>
                 <div class="datatable-control">
                     <div class="relative">
-                        <input type="text" class="datatable-input w-64" placeholder="Rechercher une catégorie...">
+                        <input type="text" class="datatable-input w-64 !bg-white" placeholder="Rechercher une catégorie...">
                     </div>
                 </div>
             </div>
@@ -43,9 +43,9 @@
             <table class="datatable">
                 <thead>
                     <tr>
-                        <th class="w-1/3">Informations Catégorie</th>
-                        <th>Description du secteur</th>
-                        <th class="text-right w-40">Actions</th>
+                        <th class="w-1/3 !text-slate-900">Informations Catégorie</th>
+                        <th class="!text-slate-900">Description du secteur</th>
+                        <th class="text-right w-40 !text-slate-900">Actions</th>
                     </tr>
                 </thead>
                 <tbody>

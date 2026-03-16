@@ -1,28 +1,42 @@
 <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-50 bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-32">
+        <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="/" class="group">
-                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-28 md:h-32 w-auto object-contain transition-all">
+                    <img src="{{ asset('images/logo.png') }}" alt="TTS GROUPE Logo" class="h-16 md:h-20 w-auto object-contain transition-all">
                 </a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="hidden lg:flex flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input type="text" 
+                           class="w-full h-11 pl-4 pr-12 rounded-full border border-gray-200 focus:border-[#00A3A2] focus:ring-1 focus:ring-[#00A3A2] transition-all outline-none text-sm"
+                           placeholder="Rechercher un produit...">
+                    <button class="absolute right-0 top-0 h-full px-5 text-gray-400 hover:text-[#00A3A2] transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <!-- Navigation & Actions -->
             <div class="flex items-center space-x-4">
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8 mr-8">
-                    <a href="/" class="text-[0.95rem] {{ request()->is('/') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] font-medium transition-colors">Accueil</a>
-                    <a href="{{ route('about') }}" class="text-[0.95rem] {{ request()->routeIs('about') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] font-medium transition-colors">À propos</a>
-                    <a href="{{ url('/') }}#services" class="text-[0.95rem] {{ (request()->routeIs('bureau-etudes') || request()->routeIs('raccordement') || request()->routeIs('sav') || request()->routeIs('deploiement')) ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] font-medium transition-colors">Nos services</a>
-                    <a href="{{ route('shop.index') }}" class="text-[0.95rem] {{ request()->routeIs('shop.*') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] font-medium transition-colors">Boutique</a>
+                    <a href="/" class="text-[0.95rem] {{ request()->is('/') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Accueil</a>
+                    <a href="{{ route('about') }}" class="text-[0.95rem] {{ request()->routeIs('about') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">À propos</a>
+                    <a href="{{ url('/') }}#services" class="text-[0.95rem] {{ (request()->routeIs('bureau-etudes') || request()->routeIs('raccordement') || request()->routeIs('sav') || request()->routeIs('deploiement')) ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Nos services</a>
+                    <a href="{{ route('shop.index') }}" class="text-[0.95rem] {{ request()->routeIs('shop.*') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Boutique</a>
                     <a href="{{ url('/') }}#contact" class="text-[0.95rem] text-[#374151] hover:text-[#1A1B4B] font-medium transition-colors">Nous contacter</a>
                 </nav>
 
                 <!-- Actions Container -->
                 <div class="flex items-center space-x-3">
                     <!-- Shopping Cart Icon (Circular) -->
-                    <a href="#" class="relative p-2.5 bg-gray-100 text-black rounded-full hover:bg-gray-200 transition-colors shadow-sm">
+                    <a href="#" class="relative p-2.5 bg-[#00A3A2]/10 text-[#00A3A2] rounded-full hover:bg-[#00A3A2]/20 transition-colors">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
@@ -79,10 +93,10 @@
             </div>
             
             <nav class="flex flex-col py-6 overflow-y-auto">
-                <a href="/" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium {{ request()->is('/') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Accueil</a>
-                <a href="{{ route('about') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium {{ request()->routeIs('about') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">À propos</a>
+                <a href="/" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->is('/') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Accueil</a>
+                <a href="{{ route('about') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->routeIs('about') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">À propos</a>
                 <a href="{{ url('/') }}#services" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium text-[#374151] hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Nos services</a>
-                <a href="{{ route('shop.index') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium {{ request()->routeIs('shop.*') ? 'text-[#00A3A2]' : 'text-[#374151]' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Boutique</a>
+                <a href="{{ route('shop.index') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->routeIs('shop.*') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Boutique</a>
                 <a href="{{ url('/') }}#contact" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium text-[#374151] hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Nous contacter</a>
             </nav>
         </div>

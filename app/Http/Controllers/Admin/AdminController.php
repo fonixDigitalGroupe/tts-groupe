@@ -89,8 +89,9 @@ class AdminController extends Controller
             'price'       => 'nullable|numeric',
             'stock'       => 'nullable|integer',
             'description' => 'nullable|string',
-            'images'      => 'nullable|array|max:3',
-            'images.*'    => 'image|max:4096',
+            'images'         => 'nullable|array|max:3',
+            'images.*'       => 'image|max:4096',
+            'classification' => 'nullable|string|in:featured,new,none',
         ]);
 
         $imagePaths = [];
@@ -109,6 +110,8 @@ class AdminController extends Controller
             'description' => $request->description,
             'images'      => $imagePaths,
             'is_active'   => true,
+            'is_featured' => $request->classification === 'featured',
+            'is_new'      => $request->classification === 'new',
         ]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produit ajouté avec succès.');
@@ -129,14 +132,29 @@ class AdminController extends Controller
             'stock'       => 'nullable|integer',
             'description' => 'nullable|string',
             'images'      => 'nullable|array|max:3',
-            'images.*'    => 'image|max:4096',
+            'images.*'       => 'image|max:4096',
+            'deleted_images' => 'nullable|array',
+            'classification' => 'nullable|string|in:featured,new,none',
         ]);
 
-        $imagePaths = $product->images ?? [];
+        $currentImages = $product->images ?? [];
+        
+        // 1. Handle Deletions
+        if ($request->has('deleted_images')) {
+            foreach ($request->deleted_images as $path) {
+                if (in_array($path, $currentImages)) {
+                    Storage::disk('public')->delete($path);
+                    $currentImages = array_filter($currentImages, fn($img) => $img !== $path);
+                }
+            }
+        }
+
+        // 2. Handle New Uploads
         if ($request->hasFile('images')) {
-            $imagePaths = [];
             foreach ($request->file('images') as $image) {
-                $imagePaths[] = $image->store('products', 'public');
+                if (count($currentImages) < 3) {
+                    $currentImages[] = $image->store('products', 'public');
+                }
             }
         }
 
@@ -147,16 +165,88 @@ class AdminController extends Controller
             'price'       => $request->price,
             'stock'       => $request->stock ?? 0,
             'description' => $request->description,
-            'images'      => $imagePaths,
+            'images'      => array_values($currentImages),
+            'is_featured' => $request->classification === 'featured',
+            'is_new'      => $request->classification === 'new',
         ]);
 
         return redirect()->route('admin.products.index')->with('success', 'Produit modifié.');
     }
 
-    // ───── SETTINGS ─────
+    // ───── SETTINGS & USERS ─────
     public function settings()
     {
-        return view('admin.settings');
+        $users = \App\Models\User::latest()->get();
+        return view('admin.settings', compact('users'));
+    }
+
+    public function usersCreate()
+    {
+        return view('admin.users.create');
+    }
+
+    public function usersStore(Request $request)
+    {
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name'  => 'required|string|max:255',
+            'email'      => 'required|email|unique:users,email',
+            'role'       => 'required|string|in:admin,chef_equipe,chef_projet,grh',
+            'password'   => 'required|string|min:8',
+        ]);
+
+        \App\Models\User::create([
+            'first_name' => $request->first_name,
+            'last_name'  => $request->last_name,
+            'name'       => $request->first_name . ' ' . $request->last_name,
+            'email'      => $request->email,
+            'role'       => $request->role,
+            'password'   => \Illuminate\Support\Facades\Hash::make($request->password),
+        ]);
+
+        return redirect()->route('admin.settings')->with('success', 'Utilisateur créé avec succès.');
+    }
+
+    public function usersEdit(\App\Models\User $user)
+    {
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function usersUpdate(Request $request, \App\Models\User $user)
+    {
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name'  => 'required|string|max:255',
+            'email'      => 'required|email|unique:users,email,'.$user->id,
+            'role'       => 'required|string|in:admin,chef_equipe,chef_projet,grh',
+            'password'   => 'nullable|string|min:8',
+        ]);
+
+        $data = [
+            'first_name' => $request->first_name,
+            'last_name'  => $request->last_name,
+            'name'       => $request->first_name . ' ' . $request->last_name,
+            'email'      => $request->email,
+            'role'       => $request->role,
+        ];
+
+        if ($request->filled('password')) {
+            $data['password'] = \Illuminate\Support\Facades\Hash::make($request->password);
+        }
+
+        $user->update($data);
+
+        return redirect()->route('admin.settings')->with('success', 'Utilisateur mis à jour.');
+    }
+
+    public function usersDestroy(\App\Models\User $user)
+    {
+        if ($user->id === auth()->id()) {
+            return back()->with('error', 'Vous ne pouvez pas supprimer votre propre compte.');
+        }
+        
+        $user->delete();
+        return back()->with('success', 'Utilisateur supprimé.');
     }
 
     public function productsDestroy(Product $product)

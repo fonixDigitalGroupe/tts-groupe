@@ -19,9 +19,41 @@ class ShopController extends Controller
             });
         }
 
+        if ($request->has('search') && $request->search !== '') {
+            $searchTerm = $request->search;
+            $query->where(function($q) use ($searchTerm) {
+                $q->where('name', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('description', 'LIKE', "%{$searchTerm}%");
+            });
+        }
+
+        if ($request->has('min_price') && $request->min_price !== '') {
+            $query->where('price', '>=', $request->min_price);
+        }
+
+        if ($request->has('max_price') && $request->max_price !== '') {
+            $query->where('price', '<=', $request->max_price);
+        }
+
+        $isFiltered = $request->anyFilled(['category', 'search', 'min_price', 'max_price']);
+
+        $featuredProducts = Product::where('is_active', true)->where('is_featured', true)->with('category')->latest()->take(10)->get();
+        $newProducts = Product::where('is_active', true)->where('is_new', true)->with('category')->latest()->take(10)->get();
+        
         $products = $query->latest()->paginate(12)->withQueryString();
         $categories = Category::where('is_active', true)->get();
 
-        return view('pages.shop', compact('products', 'categories'));
+        return view('pages.shop', compact('products', 'categories', 'featuredProducts', 'newProducts', 'isFiltered'));
+    }
+
+    public function show(Product $product)
+    {
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->where('is_active', true)
+            ->take(6)
+            ->get();
+
+        return view('pages.product-show', compact('product', 'relatedProducts'));
     }
 }

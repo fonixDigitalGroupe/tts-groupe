@@ -11,7 +11,7 @@
                             <div class="w-1.5 h-1.5 bg-cyan-300 opacity-{{ rand(40, 90) }}"></div>
                         @endfor
                     </div>
-                    <h1 class="text-3xl font-bold tracking-tight uppercase">Production Terrain</h1>
+                    <h1 class="text-3xl font-black tracking-tight uppercase">Production Terrain</h1>
                 </div>
                 <p class="text-xl font-medium opacity-90 italic">"Déploiement, raccordement et maintenance fibre optique"</p>
             </div>
@@ -25,7 +25,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 font-display uppercase tracking-tight">Nos Réalisations <span class="text-[#00A3A2]">Terrain</span></h2>
+                <h2 class="text-3xl font-black text-gray-900 mb-8 font-display uppercase tracking-tight">Nos Réalisations <span class="text-[#00A3A2]">Terrain</span></h2>
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
                     Opérationnels et réactifs, <span class="text-blue-900 font-bold">TTS GROUPE</span> garantit des interventions de précision pour la construction et l'entretien de vos réseaux.
                 </p>

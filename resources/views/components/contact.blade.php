@@ -1,8 +1,8 @@
-<section class="py-24 bg-gray-50/10" id="contact">
+<section class="py-12 bg-[#00A3A2]/5" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Standardized Header -->
-        <div class="text-center mb-20">
-            <h2 class="text-2xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Prêt à donner vie à votre <span class="text-[#00A3A2]">prochain projet ?</span></h2>
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-4xl font-black text-blue-950 mb-8 tracking-tight">Prêt à donner vie à votre prochain projet ?</h2>
             <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
                 Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.
             </p>
@@ -62,9 +62,9 @@
                         <textarea id="message" name="message" rows="4" class="w-full px-5 py-4 rounded-2xl border border-gray-100 bg-gray-50/50 focus:border-[#00A3A2] focus:bg-white focus:ring-0 outline-none transition-all resize-none placeholder:text-gray-400 font-medium" placeholder="Décrivez votre projet en détail..."></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-5 bg-[#00A3A2] hover:bg-[#008a89] text-white font-black rounded-full transition-all shadow-lg shadow-[#00A3A2]/20 flex items-center justify-center group">
+                    <button type="submit" class="w-full py-5 bg-blue-950 hover:bg-blue-900 text-white font-black rounded-full transition-colors flex items-center justify-center group">
                         Envoyer le message
-                        <svg class="w-6 h-6 ml-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </button>

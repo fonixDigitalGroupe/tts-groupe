@@ -2,44 +2,32 @@
 
 @section('content')
 
-    <!-- Hero Section -->
-    <section class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-30">
+    <!-- Qui sommes-nous ? (Combined with Hero Background) -->
+    <section class="py-12 bg-[#00A3A2]/5 relative overflow-hidden">
+        <!-- Decorative Background Elements from old Hero -->
+        <div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
             <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00A3A2]/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
         </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-            </div>
-        </div>
-    </section>
 
-    <!-- Qui sommes-nous ? -->
-    <section class="py-24 bg-gray-50/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Side (Moved to Left) -->
+                <div class="lg:w-1/2 relative">
+                    <!-- Added decorative blobs behind image -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#00A3A2]/20 to-blue-100/40 transform rotate-3 scale-105 z-0"></div>
+                    <div class="overflow-hidden shadow-2xl relative z-10 border-8 border-white rounded-2xl">
+                        <img src="{{ asset('images/traveau.jpg') }}" onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" alt="Expertise TTS" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Text Side (Moved to Right) -->
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-4 tracking-tight">Qui <span class="text-[#00A3A2]">sommes-nous ?</span></h2>
-                    <h3 class="text-xl font-bold text-blue-900 mb-6">Votre Partenaire Télécom de Confiance</h3>
+                    <h2 class="text-3xl md:text-5xl font-black text-blue-950 mb-4 tracking-tight">Qui sommes-nous ?</h2>
+                    <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-6">Votre Partenaire Télécom de Confiance</h3>
                     <p class="text-gray-500 text-lg leading-relaxed mb-8 font-medium">
                         <span class="text-blue-950 font-bold">TTS GROUPE</span> est une entreprise spécialisée dans les travaux Télécom et Fibre Optique, intervenant sur les marchés européens et africains. Notre double expertise – Bureau d'Études et Production Terrain – nous permet d'accompagner nos clients sur l'ensemble de la chaîne de valeur des réseaux télécom.
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <div class="text-[#00A3A2] font-black text-2xl mb-1">2017</div>
-                            <div class="text-gray-500 text-sm font-bold uppercase tracking-wider">Année de création</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <div class="text-[#00A3A2] font-black text-2xl mb-1">Double</div>
-                            <div class="text-gray-500 text-sm font-bold uppercase tracking-wider">Expertise Études/Terrain</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl">
-                        <img src="{{ asset('images/about_technician.png') }}" onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" alt="Expertise TTS" class="w-full h-full object-cover">
-                    </div>
                 </div>
             </div>
         </div>
@@ -50,7 +38,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Bureau d'Études -->
-                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all">
+                <div class="bg-white p-10 border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all hover:shadow-xl hover:-translate-y-1">
                     <div class="mb-10">
                         <div class="w-16 h-16 bg-blue-50 text-[#00A3A2] rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,7 +74,7 @@
                 </div>
 
                 <!-- Production Terrain -->
-                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all">
+                <div class="bg-white p-10 border border-gray-100 shadow-sm flex flex-col hover:border-[#00A3A2]/30 transition-all hover:shadow-xl hover:-translate-y-1">
                     <div class="mb-10">
                         <div class="w-16 h-16 bg-blue-50 text-[#00A3A2] rounded-2xl flex items-center justify-center mb-6">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,15 +117,12 @@
             </div>
         </div>
     </section>
-            </div>
-        </div>
-    </section>
 
     <!-- Terrain d'Action (Gallery) -->
     <section class="py-24 bg-gray-50/10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Notre <span class="text-[#00A3A2]">Terrain d'Action</span></h2>
+                <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-8 tracking-tight">Notre Terrain d'Action</h2>
                 <p class="text-gray-500 font-medium">Découvrez nos équipes au cœur de l'action sur le terrain.</p>
             </div>
 
@@ -152,14 +137,11 @@
                     ];
                 @endphp
                 @foreach ($gallery as $item)
-                    <div class="relative group rounded-[2rem] overflow-hidden aspect-[3/2] shadow-sm bg-gray-100 border border-gray-100">
+                    <div class="relative group overflow-hidden aspect-[3/2] shadow-sm bg-gray-100 border border-gray-100">
                         <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['desc'] }}" class="w-full h-full object-cover">
-                        <!-- Badge -->
-                        <div class="absolute top-4 left-4 z-10 px-3 py-1 bg-[#00A3A2]/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full">
-                            {{ $item['label'] }}
-                        </div>
+                        
                         <!-- Info Overlay -->
-                        <div class="absolute inset-x-3 bottom-3 z-10 p-4 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute inset-x-3 bottom-3 z-10 p-4 backdrop-blur-md bg-white/10 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h4 class="text-white font-bold text-xs leading-tight">{{ $item['desc'] }}</h4>
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
@@ -173,7 +155,7 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-10 tracking-tight">Moyens <span class="text-[#00A3A2]">Humains & Matériels</span></h2>
+                <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-10 tracking-tight">Moyens Humains &amp; Matériels</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -188,7 +170,7 @@
                     ];
                 @endphp
                 @foreach ($moyens as $moyen)
-                    <div class="bg-gray-50/10 p-8 rounded-[2rem] flex items-center space-x-6 border border-gray-100 shadow-sm transition-all hover:shadow-md">
+                    <div class="bg-gray-50/10 p-8 flex items-center space-x-6 border border-gray-100 shadow-sm transition-all hover:shadow-md">
                         <div class="w-14 h-14 bg-[#00A3A2] rounded-full flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-[#00A3A2]/20">
                             @if($moyen['icon'] == 'users')
                                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -228,7 +210,7 @@
     <section class="py-24 bg-gray-50/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-semibold text-blue-950 mb-8 tracking-tight">Sécurité – <span class="text-[#00A3A2]">Qualité – Planning</span></h2>
+                <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-8 tracking-tight">Sécurité – Qualité – Planning</h2>
                 <p class="text-gray-500 font-medium max-w-2xl mx-auto">La sécurité et la communication sont les piliers de notre méthodologie sur l'ensemble de nos chantiers.</p>
             </div>
 
@@ -242,7 +224,7 @@
                     ];
                 @endphp
                 @foreach ($engagements as $eng)
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center flex flex-col items-center group hover:border-[#00A3A2]/30 transition-all">
+                    <div class="bg-white p-8 border border-gray-100 shadow-sm text-center flex flex-col items-center group hover:border-[#00A3A2]/30 transition-all">
                         <div class="w-14 h-14 mb-6 rounded-2xl bg-blue-50 text-[#00A3A2] flex items-center justify-center group-hover:bg-[#00A3A2] group-hover:text-white transition-all duration-300">
                             @if($eng['icon'] == 'shield')
                                 <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
