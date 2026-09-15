@@ -20,7 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (PostTooLargeException $e, $request) {
             return back()->withInput()->with(
                 'error',
-                'Le fichier envoyé est trop volumineux. Choisissez une image de moins de 4 Mo.'
+                'Le fichier envoyé est trop volumineux. Choisissez une image de moins de 12 Mo.'
             );
         });
     })->create();

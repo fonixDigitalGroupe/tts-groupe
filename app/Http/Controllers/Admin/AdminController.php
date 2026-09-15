@@ -109,7 +109,7 @@ class AdminController extends Controller
             'title'           => 'required|string|max:255',
             'description'     => 'nullable|string|max:500',
             'page_subtitle'   => 'nullable|string|max:255',
-            'page_image'      => 'nullable|image|max:4096',
+            'page_image'      => 'nullable|image|max:12288',
             'cards'           => 'nullable|array',
             'cards.*.title'   => 'nullable|string|max:255',
             'cards.*.items'   => 'nullable|array',
@@ -157,7 +157,7 @@ class AdminController extends Controller
             'title'           => 'required|string|max:255',
             'description'     => 'nullable|string|max:500',
             'page_subtitle'   => 'nullable|string|max:255',
-            'page_image'      => 'nullable|image|max:4096',
+            'page_image'      => 'nullable|image|max:12288',
             'remove_image'    => 'nullable|boolean',
             'cards'           => 'nullable|array',
             'cards.*.title'   => 'nullable|string|max:255',
@@ -239,7 +239,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'caption' => 'nullable|string|max:255',
-            'image'   => 'required|image|max:4096',
+            'image'   => 'required|image|max:12288',
         ]);
 
         TeamItem::create([
@@ -261,7 +261,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'caption' => 'nullable|string|max:255',
-            'image'   => 'nullable|image|max:4096',
+            'image'   => 'nullable|image|max:12288',
         ]);
 
         $data = ['caption' => $request->caption];
@@ -315,7 +315,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name'  => 'nullable|string|max:255',
-            'image' => 'required|image|max:4096',
+            'image' => 'required|image|max:12288',
         ]);
 
         Partner::create([
@@ -337,7 +337,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name'  => 'nullable|string|max:255',
-            'image' => 'nullable|image|max:4096',
+            'image' => 'nullable|image|max:12288',
         ]);
 
         $data = ['name' => $request->name];
@@ -379,7 +379,7 @@ class AdminController extends Controller
         $request->validate([
             'contact_title'    => 'nullable|string|max:255',
             'contact_subtitle' => 'nullable|string|max:1000',
-            'contact_image'    => 'nullable|image|max:4096',
+            'contact_image'    => 'nullable|image|max:12288',
         ]);
 
         Setting::set('contact_title', $request->input('contact_title'));
@@ -420,7 +420,7 @@ class AdminController extends Controller
             'banner_text'      => 'nullable|string|max:1000',
             'banner_btn1'      => 'nullable|string|max:100',
             'banner_btn2'      => 'nullable|string|max:100',
-            'banner_image'     => 'nullable|image|max:4096',
+            'banner_image'     => 'nullable|image|max:12288',
         ]);
 
         foreach (['banner_title', 'banner_highlight', 'banner_tagline', 'banner_text', 'banner_btn1', 'banner_btn2'] as $key) {
@@ -466,9 +466,9 @@ class AdminController extends Controller
     public function aboutUpdate(Request $request)
     {
         $request->validate([
-            'about_hero_image'   => 'nullable|image|max:4096',
-            'about_banner_image' => 'nullable|image|max:4096',
-            'gallery_files.*'    => 'nullable|image|max:4096',
+            'about_hero_image'   => 'nullable|image|max:12288',
+            'about_banner_image' => 'nullable|image|max:12288',
+            'gallery_files.*'    => 'nullable|image|max:12288',
         ]);
 
         // Textes simples

@@ -94,6 +94,7 @@
                             <p class="text-xs font-semibold text-slate-700 truncate" x-text="fileName || 'Remplacer l\'image'"></p>
                         </div>
                     </label>
+                    <p class="text-[11px] text-slate-400 ml-1">JPG, PNG ou WEBP &mdash; 12 Mo maximum.</p>
                 </div>
             </div>
             <div class="border-t border-slate-100 pt-6 mt-6">
@@ -390,6 +391,7 @@
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest block ml-1">Titre</label>
+                                <p class="text-[11px] text-slate-400 ml-1">JPG, PNG ou WEBP &mdash; 12 Mo maximum.</p>
                                 <input type="text" x-model="caption" class="input-field">
                             </div>
                         </div>
@@ -456,6 +458,7 @@
                             <p class="text-xs font-semibold text-slate-700 truncate" x-text="fileName || 'Remplacer l\'image'"></p>
                         </div>
                     </label>
+                    <p class="text-[11px] text-slate-400 ml-1">JPG, PNG ou WEBP &mdash; 12 Mo maximum.</p>
                 </div>
             </div>
             <div class="border-t border-slate-100 pt-6 mt-6">

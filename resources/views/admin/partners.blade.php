@@ -71,6 +71,7 @@
                                         <p class="text-sm font-semibold text-slate-700 truncate" x-text="fileName || 'Choisir un logo'"></p>
                                     </div>
                                 </label>
+                                <p class="text-[11px] text-slate-400 ml-1">JPG, PNG ou WEBP &mdash; 12 Mo maximum.</p>
                                 @error('image') <p class="text-xs text-rose-600 font-medium ml-1">{{ $message }}</p> @enderror
                             </div>
                             <div class="space-y-2">
@@ -164,6 +165,7 @@
                                         <p class="text-sm font-semibold text-slate-700 truncate" x-text="fileName || 'Choisir un nouveau logo'"></p>
                                     </div>
                                 </label>
+                                <p class="text-[11px] text-slate-400 ml-1">JPG, PNG ou WEBP &mdash; 12 Mo maximum.</p>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest block ml-1">Nom</label>
