@@ -31,7 +31,6 @@
                     <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Nos services</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Boutique</a></li>
                 </ul>
             </div>
             <div>
@@ -40,7 +39,7 @@
                 <p class="text-gray-300 text-sm">+33 6 59 24 44 03</p>
                 <p class="text-gray-300 text-sm mb-4">+33 6 46 55 85 78</p>
                 <p class="text-gray-400 font-medium mb-1 uppercase text-[10px] tracking-widest">Email :</p>
-                <p class="text-gray-300 text-sm">contact@tts-groupe.com</p>
+                <p class="text-gray-300 text-sm">contact@tts-groupe.fr</p>
             </div>
         </div>
         <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">

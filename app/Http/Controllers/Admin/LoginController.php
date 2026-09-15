@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         if (Auth::check()) {
-            return redirect()->route('admin.products.index');
+            return redirect()->route('admin.settings');
         }
         return view('admin.login');
     }
@@ -33,7 +33,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('admin.products.index'));
+            return redirect()->intended(route('admin.settings'));
         }
 
         throw ValidationException::withMessages([

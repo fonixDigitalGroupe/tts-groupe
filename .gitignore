@@ -22,3 +22,12 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Dépendances npm imbriquées (ne doivent jamais être versionnées)
+node_modules/
+
+# Binaire Tailwind standalone (8,5 Mo, réinstallable)
+/tailwindcss-linux-x64
+
+# Dumps et archives d'autres projets
+/sen/

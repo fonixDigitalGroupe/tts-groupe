@@ -16,24 +16,11 @@
                     <a href="/" class="text-[0.95rem] {{ request()->is('/') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Accueil</a>
                     <a href="{{ route('about') }}" class="text-[0.95rem] {{ request()->routeIs('about') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">À propos</a>
                     <a href="{{ url('/') }}#services" class="text-[0.95rem] {{ (request()->routeIs('bureau-etudes') || request()->routeIs('raccordement') || request()->routeIs('sav') || request()->routeIs('deploiement')) ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Nos services</a>
-                    <a href="{{ route('shop.index') }}" class="text-[0.95rem] {{ request()->routeIs('shop.*') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] transition-colors">Boutique</a>
                     <a href="{{ url('/') }}#contact" class="text-[0.95rem] text-[#374151] hover:text-[#1A1B4B] font-medium transition-colors">Nous contacter</a>
                 </nav>
 
                 <!-- Actions Container -->
                 <div class="flex items-center space-x-3">
-                    <!-- Shopping Cart Icon (Circular) -->
-                    <button @click="$store.cart.toggle()" class="relative p-2.5 bg-[#00A3A2]/10 text-[#00A3A2] rounded-full hover:bg-[#00A3A2]/20 transition-colors">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        <!-- Dynamic Badge -->
-                        <span x-show="$store.cart.count > 0" 
-                              x-text="$store.cart.count"
-                              class="absolute -top-1 -right-1 flex h-4 w-4 bg-red-600 rounded-full text-[9px] font-black text-white items-center justify-center shadow-sm"
-                              style="display: none;"></span>
-                    </button>
-
                     <!-- Mobile menu button (Circular) -->
                     <div class="md:hidden flex items-center">
                         <button @click="mobileMenuOpen = true" type="button" class="text-black p-2.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors focus:outline-none">
@@ -86,7 +73,6 @@
                 <a href="/" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->is('/') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Accueil</a>
                 <a href="{{ route('about') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->routeIs('about') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">À propos</a>
                 <a href="{{ url('/') }}#services" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium text-[#374151] hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Nos services</a>
-                <a href="{{ route('shop.index') }}" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] {{ request()->routeIs('shop.*') ? 'text-[#00A3A2] font-black' : 'text-[#374151] font-medium' }} hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Boutique</a>
                 <a href="{{ url('/') }}#contact" @click="mobileMenuOpen = false" class="px-8 py-4 text-[0.95rem] font-medium text-[#374151] hover:text-[#1A1B4B] hover:bg-gray-50 transition-all">Nous contacter</a>
             </nav>
         </div>

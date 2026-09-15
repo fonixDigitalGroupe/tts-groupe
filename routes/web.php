@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\Admin\AdminController;
 
 Route::get('/', function () {
@@ -18,8 +18,7 @@ Route::get('/production-terrain', [AboutController::class, 'productionTerrain'])
 Route::get('/raccordement', [AboutController::class, 'raccordement'])->name('raccordement');
 Route::get('/sav', [AboutController::class, 'sav'])->name('sav');
 Route::get('/deploiement', [AboutController::class, 'deploiement'])->name('deploiement');
-Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
-Route::get('/shop/product/{product:slug}', [ShopController::class, 'show'])->name('shop.show');
+Route::get('/services/{service:slug}', [ServiceController::class, 'show'])->name('services.show');
 
 // ─── Admin Panel ──────────────────────────────────────────────
 Route::get('/admin/login', [App\Http\Controllers\Admin\LoginController::class, 'showLoginForm'])->name('login');
@@ -32,25 +31,49 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::post('/logout', [App\Http\Controllers\Admin\LoginController::class, 'logout'])->name('logout');
 
-        // Categories
-        Route::get('/categories', [AdminController::class, 'categoriesIndex'])->name('categories.index');
-        Route::get('/categories/create', [AdminController::class, 'categoriesCreate'])->name('categories.create');
-        Route::post('/categories', [AdminController::class, 'categoriesStore'])->name('categories.store');
-        Route::get('/categories/{category}/edit', [AdminController::class, 'categoriesEdit'])->name('categories.edit');
-        Route::put('/categories/{category}', [AdminController::class, 'categoriesUpdate'])->name('categories.update');
-        Route::delete('/categories/{category}', [AdminController::class, 'categoriesDestroy'])->name('categories.destroy');
+        // Statistiques (contenu page d'accueil)
+        Route::get('/statistiques', [AdminController::class, 'statistics'])->name('statistics');
+        Route::put('/statistiques', [AdminController::class, 'statisticsUpdate'])->name('statistics.update');
 
-        // Products
-        Route::get('/products', [AdminController::class, 'productsIndex'])->name('products.index');
-        Route::get('/products/create', [AdminController::class, 'productsCreate'])->name('products.create');
-        Route::post('/products', [AdminController::class, 'productsStore'])->name('products.store');
-        Route::get('/products/{product}/edit', [AdminController::class, 'productsEdit'])->name('products.edit');
-        Route::put('/products/{product}', [AdminController::class, 'productsUpdate'])->name('products.update');
-        Route::delete('/products/{product}', [AdminController::class, 'productsDestroy'])->name('products.destroy');
-        
+        // Services (section page d'accueil)
+        Route::get('/services', [AdminController::class, 'servicesIndex'])->name('services.index');
+        Route::put('/services/section', [AdminController::class, 'servicesSectionUpdate'])->name('services.section.update');
+        Route::get('/services/create', [AdminController::class, 'servicesCreate'])->name('services.create');
+        Route::post('/services', [AdminController::class, 'servicesStore'])->name('services.store');
+        Route::get('/services/{service}/edit', [AdminController::class, 'servicesEdit'])->name('services.edit');
+        Route::put('/services/{service}', [AdminController::class, 'servicesUpdate'])->name('services.update');
+        Route::delete('/services/{service}', [AdminController::class, 'servicesDestroy'])->name('services.destroy');
+
+        // Équipes (section « Nos équipes en action »)
+        Route::get('/equipes', [AdminController::class, 'teamsIndex'])->name('teams.index');
+        Route::put('/equipes/section', [AdminController::class, 'teamsSectionUpdate'])->name('teams.section.update');
+        Route::post('/equipes', [AdminController::class, 'teamsStore'])->name('teams.store');
+        Route::get('/equipes/{team}/edit', [AdminController::class, 'teamsEdit'])->name('teams.edit');
+        Route::put('/equipes/{team}', [AdminController::class, 'teamsUpdate'])->name('teams.update');
+        Route::delete('/equipes/{team}', [AdminController::class, 'teamsDestroy'])->name('teams.destroy');
+
+        // Partenaires (section « Références clients »)
+        Route::get('/partenaires', [AdminController::class, 'partnersIndex'])->name('partners.index');
+        Route::put('/partenaires/section', [AdminController::class, 'partnersSectionUpdate'])->name('partners.section.update');
+        Route::post('/partenaires', [AdminController::class, 'partnersStore'])->name('partners.store');
+        Route::get('/partenaires/{partner}/edit', [AdminController::class, 'partnersEdit'])->name('partners.edit');
+        Route::put('/partenaires/{partner}', [AdminController::class, 'partnersUpdate'])->name('partners.update');
+        Route::delete('/partenaires/{partner}', [AdminController::class, 'partnersDestroy'])->name('partners.destroy');
+
+        // Contact (section page d'accueil)
+        Route::get('/contact', [AdminController::class, 'contact'])->name('contact');
+        Route::put('/contact', [AdminController::class, 'contactUpdate'])->name('contact.update');
+
+        // Bannière (accueil)
+        Route::get('/banniere', [AdminController::class, 'banner'])->name('banner');
+        Route::put('/banniere', [AdminController::class, 'bannerUpdate'])->name('banner.update');
+
+        // Page À propos
+        Route::get('/a-propos', [AdminController::class, 'about'])->name('about');
+        Route::put('/a-propos', [AdminController::class, 'aboutUpdate'])->name('about.update');
+
         // Settings & Users
         Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
-        Route::put('/settings', [AdminController::class, 'settingsUpdate'])->name('settings.update');
         Route::get('/users/create', [AdminController::class, 'usersCreate'])->name('users.create');
         Route::post('/users', [AdminController::class, 'usersStore'])->name('users.store');
         Route::get('/users/{user}/edit', [AdminController::class, 'usersEdit'])->name('users.edit');
@@ -58,5 +81,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/users/{user}', [AdminController::class, 'usersDestroy'])->name('users.destroy');
     });
 });
-
-

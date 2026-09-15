@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan *)",
+      "Bash(php -l app/Http/Controllers/Admin/AdminController.php)",
+      "Bash(php -l app/Http/Controllers/ServiceController.php)",
+      "Bash(php -l app/Models/Service.php)"
+    ]
+  }
+}

@@ -6,8 +6,8 @@
     <title>@yield("meta_title", "TTS GROUPE - Expertise Télécom & Fibre Optique")</title>
     
     <!-- Meta Tags -->
-    <meta name="description" content="@yield('meta_description', 'TTS GROUPE est expert en ingénierie, déploiement et maintenance d’infrastructures télécom et fibre optique en Afrique et en Europe.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'ttsgroupe, telecom senegal, fibre optique, telecommunication, internet, ingénierie télécom, maintenance réseau')">
+    <meta name="description" content="@yield('meta_description', 'TTS GROUPE est expert en ingénierie, déploiement et maintenance d’infrastructures télécom et fibre optique en France.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'tts groupe, tts france, télécom france, fibre optique, télécommunication, internet, ingénierie télécom, maintenance réseau, france télécom')">
     <meta name="author" content="TTS GROUPE">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -58,54 +58,7 @@
 
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.store('cart', {
-                items: JSON.parse(localStorage.getItem('tts_cart') || '[]'),
-                isOpen: false,
 
-                toggle() { this.isOpen = !this.isOpen },
-                
-                addItem(id, name, price, image, qty = 1) {
-                    let item = this.items.find(i => i.id === id);
-                    if (item) {
-                        item.qty += qty;
-                    } else {
-                        this.items.push({ id, name, price, image, qty });
-                    }
-                    this.save();
-                    this.isOpen = true;
-                },
-
-                updateQty(id, delta) {
-                    let item = this.items.find(i => i.id === id);
-                    if (item) {
-                        item.qty += delta;
-                        if (item.qty < 1) this.removeItem(id);
-                        else this.save();
-                    }
-                },
-
-                removeItem(id) {
-                    this.items = this.items.filter(i => i.id !== id);
-                    this.save();
-                },
-
-                get total() {
-                    return this.items.reduce((sum, i) => sum + (i.price * i.qty), 0);
-                },
-
-                get count() {
-                    return this.items.reduce((sum, i) => sum + i.qty, 0);
-                },
-
-                save() {
-                    localStorage.setItem('tts_cart', JSON.stringify(this.items));
-                }
-            })
-        })
-    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -163,10 +116,6 @@
         @yield('content')
     </main>
 
-    @php
-        $whatsappNumber = \App\Models\Setting::get('whatsapp_number', '221770000000');
-    @endphp
     <x-footer />
-    <x-cart-drawer :whatsapp-number="$whatsappNumber" />
 </body>
 </html>

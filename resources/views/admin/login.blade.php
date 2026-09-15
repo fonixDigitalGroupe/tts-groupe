@@ -22,12 +22,9 @@
         }
         .btn-primary {
             background: var(--primary);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(23, 37, 84, 0.3);
         }
         .input-focus:focus {
             border-color: var(--primary);
@@ -40,9 +37,9 @@
     <div class="w-full max-w-md">
         <!-- Logo & Title -->
         <!-- Login Card -->
-        <div class="premium-card rounded-[2.5rem] p-10">
+        <div class="premium-card rounded-xl p-10">
             <div class="flex flex-col items-center mb-8">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-3xl ring-1 ring-slate-100 mb-4">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-xl ring-1 ring-slate-100 mb-4">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo TTS" class="w-14 h-14 object-contain">
                 </div>
                 <h2 class="text-xl font-extrabold text-slate-800">Connexion</h2>
@@ -52,7 +49,7 @@
                 @csrf
 
                 @if($errors->any())
-                    <div class="bg-rose-50 border border-rose-100 text-rose-600 px-4 py-3 rounded-2xl text-xs font-bold flex items-start gap-3">
+                    <div class="bg-rose-50 border border-rose-100 text-rose-600 px-4 py-3 rounded-md text-xs font-bold flex items-start gap-3">
                         <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.268 17c-.77 1.333.192 3 1.732 3z"></path></svg>
                         <span>{{ $errors->first() }}</span>
                     </div>
@@ -65,7 +62,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.206"></path></svg>
                         </span>
                         <input type="email" name="email" required autofocus
-                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-4 focus:ring-[#172554]/5 outline-none transition-all"
+                               class="w-full bg-slate-50/50 border border-slate-200 rounded-md py-4 pl-12 pr-4 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-2 focus:ring-[#172554]/5 outline-none transition-all"
                                placeholder="admin@tts-groupe.com">
                     </div>
                 </div>
@@ -77,7 +74,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </span>
                         <input type="password" name="password" id="password" required
-                               class="w-full bg-slate-50/50 border border-slate-200 rounded-2xl py-4 pl-12 pr-12 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-4 focus:ring-[#172554]/5 outline-none transition-all"
+                               class="w-full bg-slate-50/50 border border-slate-200 rounded-md py-4 pl-12 pr-12 text-sm font-semibold text-slate-700 placeholder:text-slate-300 focus:bg-white focus:border-[#172554] focus:ring-2 focus:ring-[#172554]/5 outline-none transition-all"
                                placeholder="••••••••">
                         <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-300 hover:text-[#172554] transition-colors">
                             <svg id="eye-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,8 +114,8 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn-primary w-full py-4 rounded-2xl text-white text-xs font-black uppercase tracking-widest mt-4">
-                    Se connecter à l'espace
+                <button type="submit" class="btn-primary w-full py-4 rounded-md text-white text-xs font-black uppercase tracking-widest mt-4">
+                    Se connecter
                 </button>
             </form>
         </div>

@@ -1,20 +1,30 @@
-<section class="py-12 bg-[#00A3A2]/5" id="contact">
+@php
+    use App\Models\Setting;
+    use Illuminate\Support\Str;
+    $contactTitle = Setting::get('contact_title', 'Prêt à donner vie à votre prochain projet ?');
+    $contactSubtitle = Setting::get('contact_subtitle', "Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.");
+    $contactImage = Setting::get('contact_image');
+    $contactImageUrl = $contactImage
+        ? (Str::startsWith($contactImage, 'contact/') ? asset('storage/' . $contactImage) : asset($contactImage))
+        : asset('images/contact_technician.png');
+@endphp
+<section class="py-12 bg-white" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Standardized Header -->
         <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-4xl font-black text-blue-950 mb-8 tracking-tight">Prêt à donner vie à votre prochain projet ?</h2>
+            <h2 class="text-2xl md:text-4xl font-black text-blue-950 mb-8 tracking-tight">{{ $contactTitle }}</h2>
             <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
-                Échangeons sur vos besoins pour construire ensemble une solution sur mesure qui fera grandir votre entreprise. Contactez-nous dès aujourd'hui.
+                {{ $contactSubtitle }}
             </p>
         </div>
 
         <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100 flex flex-col lg:flex-row">
-            
+
             <!-- Image Side -->
             <div class="lg:w-1/2 relative min-h-[400px] lg:min-h-full">
-                <img src="{{ asset('images/contact_technician.png') }}" 
-                     onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'" 
-                     alt="Contact TTS Groupe" 
+                <img src="{{ $contactImageUrl }}"
+                     onerror="this.onerror=null;this.src='{{ asset('images/equipe_1.png') }}'"
+                     alt="Contact TTS Groupe"
                      class="absolute inset-0 w-full h-full object-cover"
                      loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-transparent"></div>
@@ -64,7 +74,6 @@
                             <option value="raccordement">Raccordement FTTH</option>
                             <option value="sav">SAV & Diagnostic</option>
                             <option value="deploiement">Déploiement réseau</option>
-                            <option value="boutique">Boutique en ligne</option>
                         </select>
                         <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
