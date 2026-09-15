@@ -12,7 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Global : doit s'exécuter avant le routage, sinon le 405 est déjà levé.
+        $middleware->prepend(\App\Http\Middleware\DetecteEnvoiTronque::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Envoi dépassant post_max_size : PHP vide la requête (jeton CSRF compris).
