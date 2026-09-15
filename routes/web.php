@@ -28,6 +28,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/login', [App\Http\Controllers\Admin\LoginController::class, 'login'])->name('login.post');
 
     // Protected Routes
+    // Note : chaque mise à jour expose aussi une route POST sur la même URL.
+    // Le champ _method des formulaires suffit normalement, mais s'il se perd
+    // en route la requête aboutit quand même au lieu de renvoyer un 405.
     Route::middleware(['auth'])->group(function () {
         Route::post('/logout', [App\Http\Controllers\Admin\LoginController::class, 'logout'])->name('logout');
 
@@ -42,6 +45,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/services', [AdminController::class, 'servicesStore'])->name('services.store');
         Route::get('/services/{service}/edit', [AdminController::class, 'servicesEdit'])->name('services.edit');
         Route::put('/services/{service}', [AdminController::class, 'servicesUpdate'])->name('services.update');
+        Route::post('/services/{service}', [AdminController::class, 'servicesUpdate']);
         Route::delete('/services/{service}', [AdminController::class, 'servicesDestroy'])->name('services.destroy');
 
         // Équipes (section « Nos équipes en action »)
@@ -50,6 +54,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/equipes', [AdminController::class, 'teamsStore'])->name('teams.store');
         Route::get('/equipes/{team}/edit', [AdminController::class, 'teamsEdit'])->name('teams.edit');
         Route::put('/equipes/{team}', [AdminController::class, 'teamsUpdate'])->name('teams.update');
+        Route::post('/equipes/{team}', [AdminController::class, 'teamsUpdate']);
         Route::delete('/equipes/{team}', [AdminController::class, 'teamsDestroy'])->name('teams.destroy');
 
         // Partenaires (section « Références clients »)
@@ -58,6 +63,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/partenaires', [AdminController::class, 'partnersStore'])->name('partners.store');
         Route::get('/partenaires/{partner}/edit', [AdminController::class, 'partnersEdit'])->name('partners.edit');
         Route::put('/partenaires/{partner}', [AdminController::class, 'partnersUpdate'])->name('partners.update');
+        Route::post('/partenaires/{partner}', [AdminController::class, 'partnersUpdate']);
         Route::delete('/partenaires/{partner}', [AdminController::class, 'partnersDestroy'])->name('partners.destroy');
 
         // Contact (section page d'accueil)
@@ -78,6 +84,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/users', [AdminController::class, 'usersStore'])->name('users.store');
         Route::get('/users/{user}/edit', [AdminController::class, 'usersEdit'])->name('users.edit');
         Route::put('/users/{user}', [AdminController::class, 'usersUpdate'])->name('users.update');
+        Route::post('/users/{user}', [AdminController::class, 'usersUpdate']);
         Route::delete('/users/{user}', [AdminController::class, 'usersDestroy'])->name('users.destroy');
     });
 });
