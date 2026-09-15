@@ -88,7 +88,7 @@
                     <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest block ml-1">Image</label>
                     <img src="{{ $heroImg }}" alt="" class="w-full max-w-xs rounded-lg border border-slate-200 object-cover aspect-video mb-2">
                     <label class="inline-block cursor-pointer" x-data="{ fileName: '' }">
-                        <input type="file" name="about_hero_image" accept="image/*" class="hidden" @change="fileName = $event.target.files[0]?.name || ''">
+                        <input type="file" name="about_hero_image" accept="image/*" class="sr-only" @change="fileName = $event.target.files[0]?.name || ''">
                         <div class="flex items-center gap-2 border-2 border-dashed border-slate-300 rounded-lg px-3 py-1.5 bg-slate-50 hover:border-[#00A3A2] transition-colors">
                             <span class="w-6 h-6 shrink-0 rounded-lg bg-[#00A3A2]/10 text-[#00A3A2] flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></span>
                             <p class="text-xs font-semibold text-slate-700 truncate" x-text="fileName || 'Remplacer l\'image'"></p>
@@ -450,7 +450,7 @@
                     <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest block ml-1">Image de fond</label>
                     <img src="{{ $bannerImg }}" alt="" class="w-full max-w-xs rounded-lg border border-slate-200 object-cover aspect-video mb-2">
                     <label class="inline-block cursor-pointer" x-data="{ fileName: '' }">
-                        <input type="file" name="about_banner_image" accept="image/*" class="hidden" @change="fileName = $event.target.files[0]?.name || ''">
+                        <input type="file" name="about_banner_image" accept="image/*" class="sr-only" @change="fileName = $event.target.files[0]?.name || ''">
                         <div class="flex items-center gap-2 border-2 border-dashed border-slate-300 rounded-lg px-3 py-1.5 bg-slate-50 hover:border-[#00A3A2] transition-colors">
                             <span class="w-6 h-6 shrink-0 rounded-lg bg-[#00A3A2]/10 text-[#00A3A2] flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></span>
                             <p class="text-xs font-semibold text-slate-700 truncate" x-text="fileName || 'Remplacer l\'image'"></p>
