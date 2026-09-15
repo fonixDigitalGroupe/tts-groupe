@@ -5,7 +5,7 @@
 @section('content_bg', 'bg-slate-100')
 
 @section('content')
-<div class="max-w-6xl mx-auto" x-data="{ editId: null }">
+<div class="max-w-6xl mx-auto" x-data="{ editId: {{ old('_edit_id', 'null') }} }">
 
     @if(session('success'))
         <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)"
@@ -143,6 +143,7 @@
                         <button type="button" @click="editId = null" class="text-slate-400 hover:text-slate-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                     </div>
                     <form action="{{ route('admin.partners.update', $item) }}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_edit_id" value="{{ $item->id }}">
                         @csrf
                         @method('PUT')
                         <div class="p-6 space-y-6">

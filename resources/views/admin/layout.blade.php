@@ -416,6 +416,24 @@
 
         <!-- Page Content -->
         <div class="flex-1 overflow-y-scroll p-4 sm:p-6 lg:p-12 @yield('content_bg')">
+            {{-- Erreurs de validation : affichées quel que soit l'endroit du formulaire (modale comprise) --}}
+            @if($errors->any())
+                <div class="max-w-6xl mx-auto mb-6 px-4 py-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-sm font-medium">
+                    <p class="font-bold mb-1">Le formulaire n'a pas pu être enregistré :</p>
+                    <ul class="list-disc list-inside space-y-0.5">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="max-w-6xl mx-auto mb-6 px-4 py-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-sm font-medium">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             @yield('content')
         </div>
 

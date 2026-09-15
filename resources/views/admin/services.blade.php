@@ -5,7 +5,7 @@
 @section('content_bg', 'bg-slate-100')
 
 @section('content')
-<div class="max-w-6xl mx-auto" x-data="{ editId: null }">
+<div class="max-w-6xl mx-auto" x-data="{ editId: {{ old('_edit_id', 'null') }} }">
 
     @if(session('success'))
         <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)"
@@ -170,6 +170,7 @@
                     </div>
 
                     <form action="{{ route('admin.services.update', $service) }}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_edit_id" value="{{ $service->id }}">
                         @csrf
                         @method('PUT')
 
