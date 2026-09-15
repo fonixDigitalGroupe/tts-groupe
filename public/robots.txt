@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# L'administration n'a rien à faire dans les résultats de recherche.
+Disallow: /admin/
+
+Sitemap: https://tts-groupe.fr/sitemap.xml

@@ -13,6 +13,20 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+    # Adresse canonique : https://tts-groupe.fr
+    # Le site répondait sur quatre adresses (http/https, avec et sans www), chacune
+    # se déclarant canonique. Google y voyait quatre sites identiques, ce qui
+    # divisait les signaux de référencement. Ces deux règles n'en laissent qu'une.
+    # Placées avant tout le reste pour rediriger une seule fois, sans chaîne.
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://tts-groupe.fr%{REQUEST_URI} [L,R=301]
+
+    # Supprime le www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$

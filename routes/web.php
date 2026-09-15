@@ -5,11 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Admin\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

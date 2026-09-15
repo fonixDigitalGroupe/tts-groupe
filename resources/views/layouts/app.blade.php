@@ -1,3 +1,9 @@
+@php
+    // Toujours l'adresse officielle (APP_URL), jamais celle de la visite : sinon
+    // chaque variante d'hôte se déclare canonique et Google voit plusieurs sites.
+    $cheminCourant = request()->path();
+    $urlCanonique  = rtrim(config('app.url'), '/') . ($cheminCourant === '/' ? '' : '/' . $cheminCourant);
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -9,18 +15,18 @@
     <meta name="description" content="@yield('meta_description', 'TTS GROUPE est expert en ingénierie, déploiement et maintenance d’infrastructures télécom et fibre optique en France.')">
     <meta name="keywords" content="@yield('meta_keywords', 'tts groupe, tts france, télécom france, fibre optique, télécommunication, internet, ingénierie télécom, maintenance réseau, france télécom')">
     <meta name="author" content="TTS GROUPE">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="{{ $urlCanonique }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="{{ $urlCanonique }}">
     <meta property="og:title" content="@yield('meta_title', 'TTS GROUPE - Expertise Télécom & Fibre Optique')">
     <meta property="og:description" content="@yield('meta_description', 'Expertise en ingénierie et déploiement d’infrastructures télécom.')">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:url" content="{{ $urlCanonique }}">
     <meta property="twitter:title" content="@yield('meta_title', 'TTS GROUPE - Expertise Télécom & Fibre Optique')">
     <meta property="twitter:description" content="@yield('meta_description', 'Expertise en ingénierie et déploiement d’infrastructures télécom.')">
     <meta property="twitter:image" content="{{ asset('images/logo.png') }}">
